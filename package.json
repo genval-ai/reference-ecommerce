@@ -1,0 +1,16 @@
+{
+  "name": "note-taking-app",
+  "version": "1.0.0",
+  "description": "A simple NodeJS app for taking notes",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0"
+  }
+}
