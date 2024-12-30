@@ -1,0 +1,160 @@
+openapi: 3.0.0
+info:
+  title: Search Service API
+  version: 1.0.0
+  description: Service for managing and querying search indices within retail applications, supporting product discovery and catalog exploration functionality.
+
+paths:
+  /indices:
+    post:
+      summary: Create Search Index
+      operationId: createIndex
+      description: Creates a new search index with specified schema and configuration
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateIndexRequest'
+      responses:
+        '201':
+          description: Index created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateIndexResponse'
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+
+  /search:
+    post:
+      summary: Execute Search Query
+      operationId: searchQuery
+      description: Performs a search query across indexed content with filtering and faceting capabilities
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchQueryRequest'
+      responses:
+        '200':
+          description: Search query executed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SearchQueryResponse'
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+
+  /indices/{indexId}/content:
+    put:
+      summary: Update Index Content
+      operationId: updateIndex
+      description: Updates or adds new content to an existing search index
+      parameters:
+        - name: indexId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateIndexRequest'
+      responses:
+        '200':
+          description: Index content updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateIndexResponse'
+        '400':
+          description: Bad request
+        '404':
+          description: Index not found
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    CreateIndexRequest:
+      type: object
+      properties:
+        indexName:
+          type: string
+        schema:
+          type: object
+        settings:
+          type: object
+      required:
+        - indexName
+        - schema
+
+    CreateIndexResponse:
+      type: object
+      properties:
+        indexId:
+          type: string
+        status:
+          type: string
+      required:
+        - indexId
+        - status
+
+    SearchQueryRequest:
+      type: object
+      properties:
+        query:
+          type: string
+        filters:
+          type: object
+        page:
+          type: integer
+        size:
+          type: integer
+      required:
+        - query
+
+    SearchQueryResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            type: object
+        total:
+          type: integer
+        facets:
+          type: object
+      required:
+        - results
+        - total
+
+    UpdateIndexRequest:
+      type: object
+      properties:
+        documents:
+          type: array
+          items:
+            type: object
+      required:
+        - documents
+
+    UpdateIndexResponse:
+      type: object
+      properties:
+        processed:
+          type: integer
+        failed:
+          type: integer
+        status:
+          type: string
+      required:
+        - status
