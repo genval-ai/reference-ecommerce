@@ -1,0 +1,164 @@
+openapi: 3.0.0
+info:
+  title: Product Management API
+  version: 1.0.0
+  description: API for managing products within a retail system
+
+paths:
+  /products:
+    post:
+      summary: Create Product
+      operationId: createProduct
+      description: Creates a new product in the system
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateProductRequest'
+      responses:
+        '201':
+          description: Product created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateProductResponse'
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+
+  /products/{productId}:
+    get:
+      summary: Get Product
+      operationId: getProduct
+      description: Retrieves detailed product information by ID
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetProductResponse'
+        '404':
+          description: Product not found
+        '500':
+          description: Internal server error
+
+    put:
+      summary: Update Product
+      operationId: updateProduct
+      description: Updates an existing product's information
+      parameters:
+        - name: productId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateProductRequest'
+      responses:
+        '200':
+          description: Product updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateProductResponse'
+        '400':
+          description: Bad request
+        '404':
+          description: Product not found
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    CreateProductRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+        categoryId:
+          type: string
+      required:
+        - name
+        - price
+
+    CreateProductResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+        categoryId:
+          type: string
+      required:
+        - id
+
+    GetProductResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+        categoryId:
+          type: string
+        variants:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              sku:
+                type: string
+              attributes:
+                type: object
+      required:
+        - id
+        - name
+        - price
+
+    UpdateProductRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+        categoryId:
+          type: string
+
+    UpdateProductResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+      required:
+        - success
