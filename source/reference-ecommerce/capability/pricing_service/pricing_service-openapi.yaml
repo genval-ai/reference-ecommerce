@@ -1,0 +1,53 @@
+openapi: 3.0.0
+info:
+  title: Pricing Service API
+  version: 1.0.0
+  description: API for managing pricing information and calculations for e-commerce products
+
+paths:
+  /item-price:
+    get:
+      summary: Get Item Price
+      operationId: getItemPrice
+      description: Retrieves the current price for a specific item
+      parameters:
+        - name: itemId
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: locationId
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ItemPriceResponse'
+        '400':
+          description: Bad request
+        '404':
+          description: Item not found
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    ItemPriceResponse:
+      type: object
+      properties:
+        price:
+          type: number
+          format: float
+        currency:
+          type: string
+        effectiveDate:
+          type: string
+          format: date-time
+      required:
+        - price
+        - currency
