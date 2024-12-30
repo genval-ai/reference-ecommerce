@@ -1,0 +1,126 @@
+openapi: 3.0.0
+info:
+  title: Tax Calculation API
+  version: 1.0.0
+  description: RESTful service for calculating taxes in e-commerce transactions across multiple countries, specializing in Japanese and international market tax computations.
+
+paths:
+  /calculate-tax:
+    post:
+      summary: Calculate Transaction Tax
+      operationId: calculateTax
+      description: Calculates applicable taxes for a given e-commerce transaction based on product details and jurisdiction.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CalculateTaxRequest'
+      responses:
+        '200':
+          description: Successful tax calculation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalculateTaxResponse'
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+
+  /tax-rates:
+    get:
+      summary: Get Tax Rates
+      operationId: getTaxRates
+      description: Retrieves current tax rates for a specific country or region.
+      parameters:
+        - name: country
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: region
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: product_type
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful retrieval of tax rates
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTaxRatesResponse'
+        '400':
+          description: Bad request
+        '404':
+          description: Tax rates not found
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    CalculateTaxRequest:
+      type: object
+      properties:
+        amount:
+          type: number
+        currency:
+          type: string
+        country:
+          type: string
+        product_type:
+          type: string
+        shipping_address:
+          type: object
+      required:
+        - amount
+        - currency
+        - country
+
+    CalculateTaxResponse:
+      type: object
+      properties:
+        total_tax:
+          type: number
+        tax_breakdown:
+          type: array
+          items:
+            type: object
+            properties:
+              tax_type:
+                type: string
+              rate:
+                type: number
+              amount:
+                type: number
+        currency:
+          type: string
+      required:
+        - total_tax
+        - currency
+
+    GetTaxRatesResponse:
+      type: object
+      properties:
+        country:
+          type: string
+        rates:
+          type: array
+          items:
+            type: object
+            properties:
+              type:
+                type: string
+              rate:
+                type: number
+              effective_date:
+                type: string
+      required:
+        - country
+        - rates
