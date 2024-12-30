@@ -1,0 +1,170 @@
+openapi: 3.0.0
+info:
+  title: Customer Segmentation API
+  version: 1.0.0
+  description: API for categorizing and defining customer segments based on various attributes and behaviors.
+
+paths:
+  /segments:
+    post:
+      summary: Create Customer Segment
+      operationId: createSegment
+      description: Creates a new customer segment based on specified criteria and rules
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateSegmentRequest'
+      responses:
+        '201':
+          description: Segment created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateSegmentResponse'
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+
+  /segments/{segmentId}/customers:
+    post:
+      summary: Assign Customers to Segment
+      operationId: assignCustomers
+      description: Assigns customers to an existing segment based on matching criteria
+      parameters:
+        - name: segmentId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AssignCustomersRequest'
+      responses:
+        '200':
+          description: Customers assigned successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AssignCustomersResponse'
+        '400':
+          description: Bad request
+        '404':
+          description: Segment not found
+        '500':
+          description: Internal server error
+
+  /segments/{segmentId}/analyze:
+    get:
+      summary: Analyze Segment
+      operationId: analyzeSegment
+      description: Provides analytical insights about a customer segment
+      parameters:
+        - name: segmentId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: metrics
+          in: query
+          required: false
+          schema:
+            type: array
+            items:
+              type: string
+      responses:
+        '200':
+          description: Segment analysis completed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalyzeSegmentResponse'
+        '404':
+          description: Segment not found
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    CreateSegmentRequest:
+      type: object
+      properties:
+        segmentName:
+          type: string
+        criteria:
+          type: array
+          items:
+            type: object
+            properties:
+              attribute:
+                type: string
+              operator:
+                type: string
+              value:
+                type: string
+        description:
+          type: string
+      required:
+        - segmentName
+        - criteria
+
+    CreateSegmentResponse:
+      type: object
+      properties:
+        segmentId:
+          type: string
+        segmentName:
+          type: string
+        customerCount:
+          type: integer
+        status:
+          type: string
+      required:
+        - segmentId
+        - segmentName
+        - customerCount
+        - status
+
+    AssignCustomersRequest:
+      type: object
+      properties:
+        customerIds:
+          type: array
+          items:
+            type: string
+      required:
+        - customerIds
+
+    AssignCustomersResponse:
+      type: object
+      properties:
+        successCount:
+          type: integer
+        failedCount:
+          type: integer
+        errors:
+          type: array
+          items:
+            type: string
+      required:
+        - successCount
+        - failedCount
+
+    AnalyzeSegmentResponse:
+      type: object
+      properties:
+        segmentSize:
+          type: integer
+        demographics:
+          type: object
+        behaviors:
+          type: object
+        metrics:
+          type: object
+      required:
+        - segmentSize
