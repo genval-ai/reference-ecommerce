@@ -1,0 +1,157 @@
+openapi: 3.0.0
+info:
+  title: Loyalty Service API
+  version: 1.0.0
+  description: API for managing loyalty program members, their transactions, rewards, and promotional activities.
+
+paths:
+  /members:
+    post:
+      summary: Create Loyalty Member
+      operationId: createMember
+      description: Register a new loyalty program member with their profile information
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateMemberRequest'
+      responses:
+        '201':
+          description: Member created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateMemberResponse'
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+
+  /transactions:
+    post:
+      summary: Record Loyalty Transaction
+      operationId: recordTransaction
+      description: Record a purchase or transaction for a loyalty member and calculate points
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RecordTransactionRequest'
+      responses:
+        '200':
+          description: Transaction recorded successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecordTransactionResponse'
+        '400':
+          description: Bad request
+        '404':
+          description: Member not found
+        '500':
+          description: Internal server error
+
+  /promotions/apply:
+    post:
+      summary: Apply Promotion
+      operationId: applyPromotion
+      description: Apply a promotional offer to a loyalty member's account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApplyPromotionRequest'
+      responses:
+        '200':
+          description: Promotion applied successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplyPromotionResponse'
+        '400':
+          description: Bad request
+        '404':
+          description: Member or promotion not found
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    CreateMemberRequest:
+      type: object
+      properties:
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+          format: email
+        phoneNumber:
+          type: string
+      required:
+        - firstName
+        - lastName
+        - email
+
+    CreateMemberResponse:
+      type: object
+      properties:
+        memberId:
+          type: string
+        status:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+
+    RecordTransactionRequest:
+      type: object
+      properties:
+        memberId:
+          type: string
+        amount:
+          type: number
+        transactionDate:
+          type: string
+          format: date-time
+      required:
+        - memberId
+        - amount
+
+    RecordTransactionResponse:
+      type: object
+      properties:
+        transactionId:
+          type: string
+        pointsEarned:
+          type: integer
+        newBalance:
+          type: integer
+
+    ApplyPromotionRequest:
+      type: object
+      properties:
+        memberId:
+          type: string
+        promotionCode:
+          type: string
+        appliedDate:
+          type: string
+          format: date-time
+      required:
+        - memberId
+        - promotionCode
+
+    ApplyPromotionResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        bonusPoints:
+          type: integer
+        promotionDetails:
+          type: string
