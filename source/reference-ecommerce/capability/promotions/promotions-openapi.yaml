@@ -1,0 +1,232 @@
+openapi: 3.0.0
+info:
+  title: Promotions API
+  version: 1.0.0
+  description: API for managing promotional offers and discounts in an e-commerce context
+
+paths:
+  /promotions:
+    post:
+      summary: Create Promotion
+      operationId: createPromotion
+      description: Create a new promotional offer with specified rules, conditions, and rewards
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePromotionRequest'
+      responses:
+        '201':
+          description: Promotion created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreatePromotionResponse'
+        '400':
+          description: Bad request
+        '500':
+          description: Internal server error
+
+  /promotions/applicable:
+    get:
+      summary: Get Applicable Promotions
+      operationId: getApplicablePromotions
+      description: Retrieve all valid promotions applicable to a specific cart or user
+      parameters:
+        - name: cartId
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: userId
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: locale
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApplicablePromotionsResponse'
+        '400':
+          description: Bad request
+        '404':
+          description: Cart not found
+        '500':
+          description: Internal server error
+
+  /promotions/{promotionId}:
+    put:
+      summary: Update Promotion
+      operationId: updatePromotion
+      description: Modify an existing promotion's details, rules, or conditions
+      parameters:
+        - name: promotionId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePromotionRequest'
+      responses:
+        '200':
+          description: Promotion updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdatePromotionResponse'
+        '400':
+          description: Bad request
+        '404':
+          description: Promotion not found
+        '500':
+          description: Internal server error
+
+    delete:
+      summary: Delete Promotion
+      operationId: deletePromotion
+      description: Remove a promotion from the system
+      parameters:
+        - name: promotionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Promotion deleted successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeletePromotionResponse'
+        '404':
+          description: Promotion not found
+        '500':
+          description: Internal server error
+
+components:
+  schemas:
+    CreatePromotionRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        discountType:
+          type: string
+          enum: [percentage, fixed, bogo]
+        discountValue:
+          type: number
+        conditions:
+          type: object
+        locales:
+          type: array
+          items:
+            type: string
+      required:
+        - name
+        - startDate
+        - endDate
+        - discountType
+        - discountValue
+
+    CreatePromotionResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+        created:
+          type: string
+          format: date-time
+      required:
+        - id
+        - status
+        - created
+
+    ApplicablePromotionsResponse:
+      type: object
+      properties:
+        promotions:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              name:
+                type: string
+              description:
+                type: string
+              discountValue:
+                type: number
+        totalDiscount:
+          type: number
+      required:
+        - promotions
+        - totalDiscount
+
+    UpdatePromotionRequest:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        startDate:
+          type: string
+          format: date-time
+        endDate:
+          type: string
+          format: date-time
+        discountValue:
+          type: number
+        conditions:
+          type: object
+
+    UpdatePromotionResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+        updated:
+          type: string
+          format: date-time
+      required:
+        - id
+        - status
+        - updated
+
+    DeletePromotionResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        deletedAt:
+          type: string
+          format: date-time
+      required:
+        - success
+        - deletedAt
