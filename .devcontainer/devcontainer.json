@@ -1,0 +1,39 @@
+{
+    "name": "Shopify Powered E-commerce Stack",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:0-18",
+    "features": {
+        "ghcr.io/devcontainers/features/aws-cli:1": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "ms-azuretools.vscode-docker",
+                "ms-vscode.vscode-typescript-tslint-plugin",
+                "redhat.vscode-yaml",
+                "amazonwebservices.aws-toolkit-vscode"
+            ],
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash",
+                "editor.formatOnSave": true,
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "[typescript]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[javascript]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[json]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                },
+                "[yaml]": {
+                    "editor.defaultFormatter": "redhat.vscode-yaml"
+                }
+            }
+        }
+    },
+    "postCreateCommand": "npm install -g aws-cdk && npm install",
+    "remoteUser": "node"
+}
