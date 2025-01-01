@@ -1,0 +1,32 @@
+.Home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.Home h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.Home p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #61dafb;
+  color: #282c34;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #21a1c4;
+}
