@@ -1,0 +1,25 @@
+.Header {
+  background-color: #282c34;
+  padding: 10px 0;
+}
+
+.Header nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.Header nav ul li {
+  margin: 0 15px;
+}
+
+.Header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.Header nav ul li a:hover {
+  text-decoration: underline;
+}
