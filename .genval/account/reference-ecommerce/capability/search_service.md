@@ -1,22 +1,22 @@
-# Search Service
-Service for managing and querying search indices within retail applications, supporting product discovery and catalog exploration functionality.
+# 検索サービス
+小売アプリケーション内の検索インデックスを管理およびクエリするためのサービスで、製品発見およびカタログ探索機能をサポートします。
 
-**Capability Metadata**
-| Property | Value |
+**機能メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Capability Code | `search_service` |
+| 機能コード | `search_service` |
 
-## Capability Operations
+## 機能操作
 
-### Create Search Index
-Creates a new search index with specified schema and configuration
+### 検索インデックスの作成
+指定されたスキーマと設定で新しい検索インデックスを作成します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `create_index` |
+| 操作コード | `create_index` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -38,7 +38,7 @@ Creates a new search index with specified schema and configuration
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -56,15 +56,15 @@ Creates a new search index with specified schema and configuration
   ]
 }
 ```
-### Execute Search Query
-Performs a search query across indexed content with filtering and faceting capabilities
+### 検索クエリの実行
+フィルタリングとファセット機能を備えた、インデックス付きコンテンツ全体での検索クエリを実行します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `search_query` |
+| 操作コード | `search_query` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -88,7 +88,7 @@ Performs a search query across indexed content with filtering and faceting capab
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -109,15 +109,15 @@ Performs a search query across indexed content with filtering and faceting capab
   ]
 }
 ```
-### Update Index Content
-Updates or adds new content to an existing search index
+### インデックスコンテンツの更新
+既存の検索インデックスに新しいコンテンツを更新または追加します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `update_index` |
+| 操作コード | `update_index` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -136,7 +136,7 @@ Updates or adds new content to an existing search index
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
