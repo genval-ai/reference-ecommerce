@@ -1,22 +1,22 @@
-# Order Management
-Manages order lifecycle including creation, updates, retrieval, and deletion of orders along with related operations for order processing and fulfillment.
+# 注文管理
+注文の作成、更新、取得、削除を含む注文ライフサイクルの管理と、注文処理および履行に関連する操作を管理します。
 
-**Capability Metadata**
-| Property | Value |
+**機能メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Capability Code | `order-management` |
+| 機能コード | `order-management` |
 
-## Capability Operations
+## 機能操作
 
-### Create Order
-Creates a new order with the specified details
+### 注文作成
+指定された詳細で新しい注文を作成します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `create_order` |
+| 操作コード | `create_order` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -55,7 +55,7 @@ Creates a new order with the specified details
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -78,15 +78,15 @@ Creates a new order with the specified details
   ]
 }
 ```
-### Get Order
-Retrieves order details by order ID
+### 注文取得
+注文IDによる注文詳細の取得
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `get_order` |
+| 操作コード | `get_order` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -101,7 +101,7 @@ Retrieves order details by order ID
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -128,15 +128,15 @@ Retrieves order details by order ID
   ]
 }
 ```
-### Update Order
-Updates an existing order's details
+### 注文更新
+既存の注文の詳細を更新します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `update_order` |
+| 操作コード | `update_order` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -157,7 +157,7 @@ Updates an existing order's details
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -179,15 +179,15 @@ Updates an existing order's details
   ]
 }
 ```
-### Delete Order
-Deletes an existing order
+### 注文削除
+既存の注文を削除します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `delete_order` |
+| 操作コード | `delete_order` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -202,7 +202,7 @@ Deletes an existing order
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
