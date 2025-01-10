@@ -1,22 +1,22 @@
-# Inventory Service
-Manages inventories, items, product variants, and locations within the system, providing comprehensive inventory control and tracking capabilities.
+# 在庫サービス
+システム内の在庫、アイテム、製品バリアント、および場所を管理し、包括的な在庫管理と追跡機能を提供します。
 
-**Capability Metadata**
-| Property | Value |
+**機能メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Capability Code | `inventory_service` |
+| 機能コード | `inventory_service` |
 
-## Capability Operations
+## 機能操作
 
-### Get Inventory Level
-Retrieves current inventory level for a specific product variant at a given location
+### 在庫レベルの取得
+特定の場所における特定の製品バリアントの現在の在庫レベルを取得します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `get_inventory_level` |
+| 操作コード | `get_inventory_level` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -35,7 +35,7 @@ Retrieves current inventory level for a specific product variant at a given loca
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -52,15 +52,15 @@ Retrieves current inventory level for a specific product variant at a given loca
   }
 }
 ```
-### Adjust Inventory
-Updates inventory quantity for a specific product variant at a location
+### 在庫の調整
+特定の場所における特定の製品バリアントの在庫数量を更新します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `adjust_inventory` |
+| 操作コード | `adjust_inventory` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -86,7 +86,7 @@ Updates inventory quantity for a specific product variant at a location
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -100,15 +100,15 @@ Updates inventory quantity for a specific product variant at a location
   }
 }
 ```
-### Create Location
-Creates a new inventory location in the system
+### 場所の作成
+システムに新しい在庫場所を作成します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `create_location` |
+| 操作コード | `create_location` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -129,7 +129,7 @@ Creates a new inventory location in the system
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -146,15 +146,15 @@ Creates a new inventory location in the system
   }
 }
 ```
-### Add Product Variant
-Adds a new product variant to inventory tracking
+### 製品バリアントの追加
+在庫追跡に新しい製品バリアントを追加します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `add_product_variant` |
+| 操作コード | `add_product_variant` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -176,7 +176,7 @@ Adds a new product variant to inventory tracking
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
