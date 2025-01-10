@@ -1,22 +1,22 @@
-# Cart Management
-REST API service for managing shopping carts and cart items, enabling creation, modification and retrieval of cart data.
+# カート管理
+ショッピングカートとカートアイテムを管理するためのREST APIサービスで、カートデータの作成、変更、取得を可能にします。
 
-**Capability Metadata**
-| Property | Value |
+**機能メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Capability Code | `cart-management` |
+| 機能コード | `cart-management` |
 
-## Capability Operations
+## 機能操作
 
-### Create Cart
-Creates a new empty shopping cart for a customer
+### カート作成
+顧客のために新しい空のショッピングカートを作成します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `create_cart` |
+| 操作コード | `create_cart` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -31,7 +31,7 @@ Creates a new empty shopping cart for a customer
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -50,15 +50,15 @@ Creates a new empty shopping cart for a customer
   ]
 }
 ```
-### Add Item to Cart
-Adds a product item to an existing shopping cart
+### カートにアイテムを追加
+既存のショッピングカートに商品アイテムを追加します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `add_item` |
+| 操作コード | `add_item` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -82,7 +82,7 @@ Adds a product item to an existing shopping cart
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -111,15 +111,15 @@ Adds a product item to an existing shopping cart
   ]
 }
 ```
-### Get Cart Details
-Retrieves the current state of a shopping cart
+### カート詳細の取得
+ショッピングカートの現在の状態を取得します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `get_cart` |
+| 操作コード | `get_cart` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -134,7 +134,7 @@ Retrieves the current state of a shopping cart
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
