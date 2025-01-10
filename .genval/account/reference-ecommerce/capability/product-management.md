@@ -1,22 +1,22 @@
-# Product Management
-Manages product and category data within the retail system, providing operations for creating, reading, updating and deleting products, variants and categories.
+# 製品管理
+小売システム内の製品とカテゴリデータを管理し、製品、バリアント、およびカテゴリの作成、読み取り、更新、削除のための操作を提供します。
 
-**Capability Metadata**
-| Property | Value |
+**機能メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Capability Code | `product-management` |
+| 機能コード | `product-management` |
 
-## Capability Operations
+## 機能操作
 
-### Get Product
-Retrieves detailed product information by ID
+### 製品の取得
+IDによる詳細な製品情報の取得
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `get_product` |
+| 操作コード | `get_product` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -31,7 +31,7 @@ Retrieves detailed product information by ID
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -76,15 +76,15 @@ Retrieves detailed product information by ID
   ]
 }
 ```
-### Create Product
-Creates a new product in the system
+### 製品の作成
+システムに新しい製品を作成します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `create_product` |
+| 操作コード | `create_product` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -109,7 +109,7 @@ Creates a new product in the system
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -135,15 +135,15 @@ Creates a new product in the system
   ]
 }
 ```
-### Update Product
-Updates an existing product's information
+### 製品の更新
+既存の製品情報を更新します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `update_product` |
+| 操作コード | `update_product` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -170,7 +170,7 @@ Updates an existing product's information
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
