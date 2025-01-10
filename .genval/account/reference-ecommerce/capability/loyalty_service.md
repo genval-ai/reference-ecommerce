@@ -1,22 +1,22 @@
-# Loyalty Service
-Manages loyalty program members, their transactions, rewards, and promotional activities through a comprehensive API interface.
+# ロイヤルティサービス
+包括的なAPIインターフェースを通じて、ロイヤルティプログラムのメンバー、取引、報酬、およびプロモーション活動を管理します。
 
-**Capability Metadata**
-| Property | Value |
+**機能メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Capability Code | `loyalty_service` |
+| 機能コード | `loyalty_service` |
 
-## Capability Operations
+## 機能操作
 
-### Create Loyalty Member
-Register a new loyalty program member with their profile information
+### ロイヤルティメンバーの作成
+プロフィール情報を含む新しいロイヤルティプログラムメンバーを登録します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `create_member` |
+| 操作コード | `create_member` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -43,7 +43,7 @@ Register a new loyalty program member with their profile information
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -61,15 +61,15 @@ Register a new loyalty program member with their profile information
   }
 }
 ```
-### Record Loyalty Transaction
-Record a purchase or transaction for a loyalty member and calculate points
+### ロイヤルティ取引の記録
+ロイヤルティメンバーの購入または取引を記録し、ポイントを計算します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `record_transaction` |
+| 操作コード | `record_transaction` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -92,7 +92,7 @@ Record a purchase or transaction for a loyalty member and calculate points
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -109,15 +109,15 @@ Record a purchase or transaction for a loyalty member and calculate points
   }
 }
 ```
-### Apply Promotion
-Apply a promotional offer to a loyalty member's account
+### プロモーションの適用
+ロイヤルティメンバーのアカウントにプロモーションオファーを適用します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `apply_promotion` |
+| 操作コード | `apply_promotion` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -140,7 +140,7 @@ Apply a promotional offer to a loyalty member's account
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
