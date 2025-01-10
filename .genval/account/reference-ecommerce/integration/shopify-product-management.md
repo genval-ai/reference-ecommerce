@@ -1,49 +1,49 @@
-# Shopify Product Management Integration
-Integrate Shopify's product management capabilities with your retail system to synchronize product data, variants, and categories between systems.
+# Shopify製品管理統合
+Shopifyの製品管理機能を小売システムと統合し、システム間で製品データ、バリアント、およびカテゴリを同期します。
 
-### Integration Metadata
-| Property | Value |
+### 統合メタデータ
+| プロパティ | 値 |
 |----------|------|
-| Integration Code | `shopify-product-management` |
+| 統合コード | `shopify-product-management` |
 
-### Capability
-| Property | Value |
+### 機能
+| プロパティ | 値 |
 |----------|------|
-| Capability Name | [Product Management](../capability/product-management.md) |
-| Capability Code | `product-management` |
+| 機能名 | [製品管理](../capability/product-management.md) |
+| 機能コード | `product-management` |
 
-### Provider Connection Type
-| Property | Value |
+### プロバイダー接続タイプ
+| プロパティ | 値 |
 |----------|------|
-| Provider Name | [Shopify](../provider/shopify.md) |
-| Provider Code | `shopify` |
-| Connection Type Name | [Shopify](../provider/shopify.md#shopify) |
-| Connection Type Code | `shopify` |
+| プロバイダー名 | [Shopify](../provider/shopify.md) |
+| プロバイダーコード | `shopify` |
+| 接続タイプ名 | [Shopify](../provider/shopify.md#shopify) |
+| 接続タイプコード | `shopify` |
 
-## Integration Instructions
-To implement this integration:
+## 統合手順
+この統合を実装するには：
 
-1. Map Capability Operations:
-   - get_product: Use Shopify's GET /admin/api/{version}/products/{id}.json
-   - create_product: Use POST /admin/api/{version}/products.json
-   - update_product: Use PUT /admin/api/{version}/products/{id}.json
+1. 機能操作のマッピング：
+   - get_product: Shopifyの GET /admin/api/{version}/products/{id}.json を使用
+   - create_product: POST /admin/api/{version}/products.json を使用
+   - update_product: PUT /admin/api/{version}/products/{id}.json を使用
 
-2. Data Mapping:
-   - Map product.id to Shopify's product.id
-   - Map product.name to Shopify's product.title
-   - Map product.price to Shopify's variants[0].price
-   - Map product.description to Shopify's product.body_html
-   - Map variants array to Shopify's variants array
+2. データマッピング：
+   - product.id を Shopify の product.id にマッピング
+   - product.name を Shopify の product.title にマッピング
+   - product.price を Shopify の variants[0].price にマッピング
+   - product.description を Shopify の product.body_html にマッピング
+   - variants 配列を Shopify の variants 配列にマッピング
 
-3. Authentication:
-   - Use the access_token in the Authorization header
-   - Format: 'X-Shopify-Access-Token: {access_token}'
+3. 認証：
+   - Authorization ヘッダーに access_token を使用
+   - フォーマット：'X-Shopify-Access-Token: {access_token}'
 
-4. API Version:
-   - Use the api_version parameter in the URL
-   - Default to latest if not specified
+4. API バージョン：
+   - URL に api_version パラメータを使用
+   - 指定がない場合は最新版をデフォルトとする
 
-5. Error Handling:
-   - Handle 429 rate limiting errors
-   - Implement retry logic for failed requests
-   - Validate response data against capability schemas
+5. エラー処理：
+   - 429 レート制限エラーを処理
+   - 失敗したリクエストのリトライロジックを実装
+   - レスポンスデータを機能スキーマに対して検証
