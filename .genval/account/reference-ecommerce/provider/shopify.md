@@ -1,56 +1,53 @@
 # Shopify
-No.1 eCommerce Platform for All Businesses. Start, Run + Grow Your Business with Shopify®. Customize Your Store With Our Website Builder.
+すべてのビジネスのためのNo.1 eコマースプラットフォーム。Shopify®でビジネスを開始、運営、成長させましょう。ウェブサイトビルダーを使用してあなたのストアをカスタマイズしてください。
 
-**Provider Metadata**
-| Property | Value |
+**プロバイダーメタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Capability Code | `shopify` |
+| 機能コード | `shopify` |
 
-## Provider Connection Types
+## プロバイダー接続タイプ
 
 ### Shopify
-Connect to Shopify's REST Admin API to manage your store's products, orders, customers, and more.
+Shopifyの管理REST APIに接続して、ストアの製品、注文、顧客などを管理します。
 
-**Connection Type Metadata**
-| Property | Value|
+**接続タイプメタデータ**
+| プロパティ | 値|
 |----------|------|
-| Connection Type Code | `shopify` |
+| 接続タイプコード | `shopify` |
 
-#### Shop Domain
-Your Shopify store's myshopify.com domain (e.g., mystore.myshopify.com)
+#### ショップドメイン
+あなたのShopifyストアのmyshopify.comドメイン（例：mystore.myshopify.com）
 
-**Connection Property Metadata**
-| Property | Value|
+**接続プロパティメタデータ**
+| プロパティ | 値|
 |----------|------|
-| Property Code | `shop_domain` |
-| IsSecret | False |
-| Property Level | client |
-| Requried | True |
-| Example Value | mystore.myshopify.com |
+| プロパティコード | `shop_domain` |
+| 機密情報 | いいえ |
+| プロパティレベル | クライアント |
+| 必須 | はい |
+| 例値 | mystore.myshopify.com |
 
-#### Access Token
-Admin API access token generated from Shopify admin
+#### アクセストークン
+Shopify管理画面から生成された管理APIアクセストークン
 
-**Connection Property Metadata**
-| Property | Value|
+**接続プロパティメタデータ**
+| プロパティ | 値|
 |----------|------|
-| Property Code | `access_token` |
-| IsSecret | True |
-| Property Level | client |
-| Requried | True |
-| Example Value | shpat_12345abcde... |
+| プロパティコード | `access_token` |
+| 機密情報 | はい |
+| プロパティレベル | クライアント |
+| 必須 | はい |
+| 例値 | shpat_12345abcde... |
 
-#### API Version
-Shopify API version to use (e.g., 2024-01)
+#### APIバージョン
+使用するShopify APIバージョン（例：2024-01）
 
-**Connection Property Metadata**
-| Property | Value|
+**接続プロパティメタデータ**
+| プロパティ | 値|
 |----------|------|
-| Property Code | `api_version` |
-| IsSecret | False |
-| Property Level | client |
-| Requried | True |
-| Example Value | 2024-01 |
-
-
-
+| プロパティコード | `api_version` |
+| 機密情報 | いいえ |
+| プロパティレベル | クライアント |
+| 必須 | はい |
+| 例値 | 2024-01 |
