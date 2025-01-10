@@ -1,14 +1,14 @@
-# Shopify Powered Stack
-This stack uses Shopify for all it's capabilities.
+# Shopifyを利用したスタック
+このスタックは、すべての機能にShopifyを利用しています。
 
-| Property | Value |
+| プロパティ | 値 |
 |----------|------|
-| Stack Code | `shopify-powered` |
+| スタックコード | `shopify-powered` |
 
-## Capability Integrations
+## 機能統合
 
-| Capability | Integration |
+| 機能 | 統合 |
 |----------|------|
-|  [`product-management`](../capability/product-management.md) | Shopify Product Management Integration [`shopify-product-management`](../integration/shopify-product-management.md) |
-|  [`order-management`](../capability/order-management.md) | Shopify Order Management Integration [`shopify_order_management`](../integration/shopify_order_management.md) |
-|  [`cart-management`](../capability/cart-management.md) | Elastic Path Cart Integration [`elastic-path-cart`](../integration/elastic-path-cart.md) |
+|  [`product-management`](../capability/product-management.md) | Shopify製品管理統合 [`shopify-product-management`](../integration/shopify-product-management.md) |
+|  [`order-management`](../capability/order-management.md) | Shopify注文管理統合 [`shopify_order_management`](../integration/shopify_order_management.md) |
+|  [`cart-management`](../capability/cart-management.md) | Elastic Pathカート統合 [`elastic-path-cart`](../integration/elastic-path-cart.md) |
