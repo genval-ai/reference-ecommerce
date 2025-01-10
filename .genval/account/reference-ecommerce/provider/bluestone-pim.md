@@ -1,44 +1,41 @@
 # Bluestone PIM
-The Leading Composable PIM. Unlock unparalleled efficiency with an enterprise PIM solution to help you seamlessly centralize product information.
+先進的な組み込み型PIM。製品情報を効率的に一元化するためのエンタープライズPIMソリューションで、比類のない効率性を実現します。
 
-**Provider Metadata**
-| Property | Value |
+**プロバイダーメタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Capability Code | `bluestone-pim` |
+| 機能コード | `bluestone-pim` |
 
-## Provider Connection Types
+## プロバイダー接続タイプ
 
 ### Bluestone PIM
-Connect to Bluestone PIM using API credentials
+API資格情報を使用してBluestone PIMに接続
 
-**Connection Type Metadata**
-| Property | Value|
+**接続タイプメタデータ**
+| プロパティ | 値|
 |----------|------|
-| Connection Type Code | `bluestone-pim` |
+| 接続タイプコード | `bluestone-pim` |
 
-#### API Key
-The API key for authentication with Bluestone PIM
+#### APIキー
+Bluestone PIMでの認証に使用するAPIキー
 
-**Connection Property Metadata**
-| Property | Value|
+**接続プロパティメタデータ**
+| プロパティ | 値|
 |----------|------|
-| Property Code | `api_key` |
-| IsSecret | True |
-| Property Level | client |
-| Requried | True |
-| Example Value | bstn_1234567890abcdef |
+| プロパティコード | `api_key` |
+| 機密情報 | はい |
+| プロパティレベル | クライアント |
+| 必須 | はい |
+| 例値 | bstn_1234567890abcdef |
 
-#### API Base URL
-The base URL for the Bluestone PIM API endpoint
+#### APIベースURL
+Bluestone PIM APIエンドポイントのベースURL
 
-**Connection Property Metadata**
-| Property | Value|
+**接続プロパティメタデータ**
+| プロパティ | 値|
 |----------|------|
-| Property Code | `base_url` |
-| IsSecret | False |
-| Property Level | client |
-| Requried | True |
-| Example Value | https://api.bluestone.com |
-
-
-
+| プロパティコード | `base_url` |
+| 機密情報 | いいえ |
+| プロパティレベル | クライアント |
+| 必須 | はい |
+| 例値 | https://api.bluestone.com |
