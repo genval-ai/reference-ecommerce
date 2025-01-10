@@ -1,29 +1,29 @@
-# Customer Management
-API for managing customer records and operations including creation, updates, retrieval and deletion of customer data.
+# 顧客管理
+顧客記録と操作を管理するためのAPI。顧客データの作成、更新、取得、削除を含みます。
 
-**Capability Metadata**
-| Property | Value |
+**機能メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Capability Code | `customer-management` |
+| 機能コード | `customer-management` |
 
-## Capability Operations
+## 機能操作
 
-### Get Customer Details
-Retrieves detailed information for a specific customer by ID
+### 顧客詳細の取得
+IDによる特定の顧客の詳細情報を取得します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `get_customer` |
+| 操作コード | `get_customer` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
   "properties": {
     "customerId": {
       "type": "string",
-      "description": "Unique identifier for the customer"
+      "description": "顧客の一意の識別子"
     }
   },
   "required": [
@@ -32,7 +32,7 @@ Retrieves detailed information for a specific customer by ID
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -63,15 +63,15 @@ Retrieves detailed information for a specific customer by ID
   ]
 }
 ```
-### Create New Customer
-Creates a new customer record in the system
+### 新規顧客の作成
+システムに新しい顧客記録を作成します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `create_customer` |
+| 操作コード | `create_customer` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -96,7 +96,7 @@ Creates a new customer record in the system
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -114,15 +114,15 @@ Creates a new customer record in the system
   ]
 }
 ```
-### Update Customer Information
-Updates existing customer information
+### 顧客情報の更新
+既存の顧客情報を更新します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `update_customer` |
+| 操作コード | `update_customer` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -149,7 +149,7 @@ Updates existing customer information
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -167,15 +167,15 @@ Updates existing customer information
   ]
 }
 ```
-### Delete Customer
-Removes a customer record from the system
+### 顧客の削除
+システムから顧客記録を削除します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `delete_customer` |
+| 操作コード | `delete_customer` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -190,7 +190,7 @@ Removes a customer record from the system
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
