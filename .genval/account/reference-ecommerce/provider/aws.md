@@ -1,20 +1,17 @@
 # Amazon Web Services
-Cloud Computing with AWS — Build, Deploy, and Manage Websites, Apps or Processes On AWS Secure, Reliable Network. Sign Up for a Free Account & Experience AWS Secure, Reliable, Scalable Services.
+AWSによるクラウドコンピューティング — AWSの安全で信頼性の高いネットワーク上でウェブサイト、アプリ、またはプロセスを構築、展開、管理します。無料アカウントにサインアップして、AWSの安全で信頼性が高くスケーラブルなサービスを体験してください。
 
-**Provider Metadata**
-| Property | Value |
+**プロバイダーメタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Capability Code | `aws` |
+| 機能コード | `aws` |
 
-## Provider Connection Types
+## プロバイダー接続タイプ
 
-### AWS IAM Role Authentication
-Uses AWS IAM role-based authentication for code running in AWS environments. Credentials are automatically provided through AWS's integrated authentication mechanism.
+### AWS IAMロール認証
+AWS環境で実行されるコードのためのAWS IAMロールベースの認証を使用します。資格情報はAWSの統合認証メカニズムを通じて自動的に提供されます。
 
-**Connection Type Metadata**
-| Property | Value|
+**接続タイプメタデータ**
+| プロパティ | 値|
 |----------|------|
-| Connection Type Code | `aws-role` |
-
-
-
+| 接続タイプコード | `aws-role` |
