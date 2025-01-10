@@ -1,51 +1,51 @@
-# Salesforce Customer Segmentation Integration
-Integrate customer segmentation capabilities with Salesforce to create, manage, and analyze customer segments based on Salesforce data and criteria.
+# Salesforce顧客セグメンテーション統合
+Salesforceのデータと基準に基づいて顧客セグメントを作成、管理、分析するために、顧客セグメンテーション機能をSalesforceと統合します。
 
-### Integration Metadata
-| Property | Value |
+### 統合メタデータ
+| プロパティ | 値 |
 |----------|------|
-| Integration Code | `salesforce-customer-segmentation` |
+| 統合コード | `salesforce-customer-segmentation` |
 
-### Capability
-| Property | Value |
+### 機能
+| プロパティ | 値 |
 |----------|------|
-| Capability Name | [Customer Segmentation](../capability/customer_segmentation.md) |
-| Capability Code | `customer_segmentation` |
+| 機能名 | [顧客セグメンテーション](../capability/customer_segmentation.md) |
+| 機能コード | `customer_segmentation` |
 
-### Provider Connection Type
-| Property | Value |
+### プロバイダー接続タイプ
+| プロパティ | 値 |
 |----------|------|
-| Provider Name | [Salesforce](../provider/salesforce.md) |
-| Provider Code | `salesforce` |
-| Connection Type Name | [Salesforce](../provider/salesforce.md#salesforce) |
-| Connection Type Code | `salesforce` |
+| プロバイダー名 | [Salesforce](../provider/salesforce.md) |
+| プロバイダーコード | `salesforce` |
+| 接続タイプ名 | [Salesforce](../provider/salesforce.md#salesforce) |
+| 接続タイプコード | `salesforce` |
 
-## Integration Instructions
-To implement this integration:
+## 統合手順
+この統合を実装するには：
 
-1. Configure Salesforce Connected App:
-- Create a new Connected App in Salesforce
-- Set OAuth scopes for API access
-- Use the provided client_id and client_secret in the connection properties
+1. Salesforce接続アプリの設定：
+- Salesforceで新しい接続アプリを作成します
+- API アクセスのためのOAuthスコープを設定します
+- 接続プロパティで提供されたclient_idとclient_secretを使用します
 
-2. Mapping Operations:
+2. 操作のマッピング：
 
 create_segment:
-- Use Salesforce SOQL queries to define segment criteria
-- Create a Campaign object in Salesforce to represent the segment
-- Map segmentId to CampaignId
+- Salesforce SOQLクエリを使用してセグメント基準を定義します
+- セグメントを表すCampaignオブジェクトをSalesforceで作成します
+- segmentIdをCampaignIdにマッピングします
 
 assign_customers:
-- Convert customerIds to Salesforce Contact/Lead IDs
-- Create CampaignMember records to associate customers with the segment
-- Track success/failure through CampaignMember status
+- customerIdsをSalesforceのContact/Lead IDに変換します
+- CampaignMemberレコードを作成して顧客をセグメントに関連付けます
+- CampaignMemberステータスを通じて成功/失敗を追跡します
 
 analyze_segment:
-- Query CampaignMember records for segment analysis
-- Utilize Salesforce Analytics API for demographic insights
-- Aggregate behavior data from related objects
+- セグメント分析のためにCampaignMemberレコードをクエリします
+- 人口統計的洞察のためにSalesforce Analytics APIを利用します
+- 関連オブジェクトから行動データを集計します
 
-3. Error Handling:
-- Implement retry logic for API rate limits
-- Handle Salesforce-specific error codes
-- Maintain error logs for failed operations
+3. エラー処理：
+- APIレート制限のためのリトライロジックを実装します
+- Salesforce固有のエラーコードを処理します
+- 失敗した操作のエラーログを維持します
