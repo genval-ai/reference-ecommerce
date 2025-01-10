@@ -1,22 +1,22 @@
-# Promotions
-Manage and retrieve promotions in an e-commerce context, supporting international commerce with localization features for creating, updating, and applying promotional offers.
+# プロモーション
+eコマースコンテキストでプロモーションを管理および取得し、プロモーションオファーの作成、更新、適用のためのローカライゼーション機能を備えた国際商取引をサポートします。
 
-**Capability Metadata**
-| Property | Value |
+**機能メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Capability Code | `promotions` |
+| 機能コード | `promotions` |
 
-## Capability Operations
+## 機能操作
 
-### Create Promotion
-Create a new promotional offer with specified rules, conditions, and rewards.
+### プロモーションの作成
+指定されたルール、条件、報酬で新しいプロモーションオファーを作成します。
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `create_promotion` |
+| 操作コード | `create_promotion` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -66,7 +66,7 @@ Create a new promotional offer with specified rules, conditions, and rewards.
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -89,15 +89,15 @@ Create a new promotional offer with specified rules, conditions, and rewards.
   ]
 }
 ```
-### Get Applicable Promotions
-Retrieve all valid promotions applicable to a specific cart or user.
+### 適用可能なプロモーションの取得
+特定のカートまたはユーザーに適用可能なすべての有効なプロモーションを取得します。
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `get_applicable_promotions` |
+| 操作コード | `get_applicable_promotions` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -118,7 +118,7 @@ Retrieve all valid promotions applicable to a specific cart or user.
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -153,15 +153,15 @@ Retrieve all valid promotions applicable to a specific cart or user.
   ]
 }
 ```
-### Update Promotion
-Modify an existing promotion's details, rules, or conditions.
+### プロモーションの更新
+既存のプロモーションの詳細、ルール、または条件を変更します。
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `update_promotion` |
+| 操作コード | `update_promotion` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -196,7 +196,7 @@ Modify an existing promotion's details, rules, or conditions.
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -209,7 +209,7 @@ Modify an existing promotion's details, rules, or conditions.
     },
     "updated": {
       "type": "string",
-      "format": "date-time"
+      "format":"date-time"
     }
   },
   "required": [
@@ -219,15 +219,15 @@ Modify an existing promotion's details, rules, or conditions.
   ]
 }
 ```
-### Delete Promotion
-Remove a promotion from the system.
+### プロモーションの削除
+システムからプロモーションを削除します。
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `delete_promotion` |
+| 操作コード | `delete_promotion` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -242,7 +242,7 @@ Remove a promotion from the system.
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
