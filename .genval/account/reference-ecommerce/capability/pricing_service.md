@@ -1,22 +1,22 @@
-# Pricing Service
-Manages pricing rules, item prices, and real-time data feeds for dynamic pricing management and updates.
+# 価格設定サービス
+価格ルール、アイテム価格、およびリアルタイムデータフィードを管理し、ダイナミックな価格管理と更新を可能にします。
 
-**Capability Metadata**
-| Property | Value |
+**機能メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Capability Code | `pricing_service` |
+| 機能コード | `pricing_service` |
 
-## Capability Operations
+## 機能操作
 
-### Get Item Price
-Retrieves the current price for a specific item
+### アイテム価格の取得
+特定のアイテムの現在の価格を取得します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `get_item_price` |
+| 操作コード | `get_item_price` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -34,7 +34,7 @@ Retrieves the current price for a specific item
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
