@@ -1,56 +1,53 @@
 # Elastic Path
-Elastic Path gives merchandisers the ability to deliver big on their ideas and solve business challenges one by one.
+Elastic Pathは、商人に自分のアイデアを大きく実現し、ビジネス課題を一つずつ解決する能力を提供します。
 
-**Provider Metadata**
-| Property | Value |
+**プロバイダーメタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Capability Code | `elastic-path` |
+| 機能コード | `elastic-path` |
 
-## Provider Connection Types
+## プロバイダー接続タイプ
 
-### Elastic Path Default Connection
-Default connection type for Elastic Path API integration using client credentials and API base URL
+### Elastic Pathデフォルト接続
+クライアント資格情報とAPIベースURLを使用したElastic Path API統合のデフォルト接続タイプ
 
-**Connection Type Metadata**
-| Property | Value|
+**接続タイプメタデータ**
+| プロパティ | 値|
 |----------|------|
-| Connection Type Code | `elastic-path-default` |
+| 接続タイプコード | `elastic-path-default` |
 
-#### Client ID
-The client ID for authenticating with Elastic Path API
+#### クライアントID
+Elastic Path APIで認証するためのクライアントID
 
-**Connection Property Metadata**
-| Property | Value|
+**接続プロパティメタデータ**
+| プロパティ | 値|
 |----------|------|
-| Property Code | `client_id` |
-| IsSecret | False |
-| Property Level | client |
-| Requried | True |
-| Example Value | abcd1234-5678-efgh-ijkl-mnopqrstuvwx |
+| プロパティコード | `client_id` |
+| 機密情報 | いいえ |
+| プロパティレベル | クライアント |
+| 必須 | はい |
+| 例値 | abcd1234-5678-efgh-ijkl-mnopqrstuvwx |
 
-#### Client Secret
-The client secret for authenticating with Elastic Path API
+#### クライアントシークレット
+Elastic Path APIで認証するためのクライアントシークレット
 
-**Connection Property Metadata**
-| Property | Value|
+**接続プロパティメタデータ**
+| プロパティ | 値|
 |----------|------|
-| Property Code | `client_secret` |
-| IsSecret | True |
-| Property Level | client |
-| Requried | True |
-| Example Value | xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx |
+| プロパティコード | `client_secret` |
+| 機密情報 | はい |
+| プロパティレベル | クライアント |
+| 必須 | はい |
+| 例値 | xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx |
 
-#### API Base URL
-The base URL for the Elastic Path API endpoint
+#### APIベースURL
+Elastic Path APIエンドポイントのベースURL
 
-**Connection Property Metadata**
-| Property | Value|
+**接続プロパティメタデータ**
+| プロパティ | 値|
 |----------|------|
-| Property Code | `api_base_url` |
-| IsSecret | False |
-| Property Level | client |
-| Requried | True |
-| Example Value | https://api.elasticpath.com |
-
-
-
+| プロパティコード | `api_base_url` |
+| 機密情報 | いいえ |
+| プロパティレベル | クライアント |
+| 必須 | はい |
+| 例値 | https://api.elasticpath.com |
