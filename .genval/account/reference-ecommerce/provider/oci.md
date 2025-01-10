@@ -1,44 +1,41 @@
 # Oracle Cloud Infrastructure
-Complete Cloud Infrastructure — Optimize your cloud infrastructure capabilities with a multicloud configuration from OCI. OCI offers a range of deployment options such as edge computing, on-premises, 
+完全なクラウドインフラストラクチャ — OCIからのマルチクラウド構成でクラウドインフラストラクチャ機能を最適化します。OCIは、エッジコンピューティング、オンプレミスなど、さまざまな展開オプションを提供します。
 
-**Provider Metadata**
-| Property | Value |
+**プロバイダーメタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Capability Code | `oci` |
+| 機能コード | `oci` |
 
-## Provider Connection Types
+## プロバイダー接続タイプ
 
-### OCI Integrated Authentication
-Uses integrated authentication where the code runs inside OCI and can assume a role for authentication. No credentials needed as authentication is handled through OCI's role-based access.
+### OCI統合認証
+コードがOCI内で実行され、認証のためにロールを引き受けることができる統合認証を使用します。OCIのロールベースのアクセスを通じて認証が処理されるため、資格情報は不要です。
 
-**Connection Type Metadata**
-| Property | Value|
+**接続タイプメタデータ**
+| プロパティ | 値|
 |----------|------|
-| Connection Type Code | `oci-integrated` |
+| 接続タイプコード | `oci-integrated` |
 
-#### Region
-The OCI region where the service is located (e.g., us-phoenix-1, us-ashburn-1)
+#### リージョン
+サービスが配置されているOCIリージョン（例：us-phoenix-1、us-ashburn-1）
 
-**Connection Property Metadata**
-| Property | Value|
+**接続プロパティメタデータ**
+| プロパティ | 値|
 |----------|------|
-| Property Code | `region` |
-| IsSecret | False |
-| Property Level | client |
-| Requried | True |
-| Example Value | us-phoenix-1 |
+| プロパティコード | `region` |
+| 機密情報 | いいえ |
+| プロパティレベル | クライアント |
+| 必須 | はい |
+| 例値 | us-phoenix-1 |
 
-#### Tenancy OCID
-The OCID (Oracle Cloud Identifier) of your tenancy
+#### テナンシーOCID
+テナンシーのOCID（Oracle Cloud Identifier）
 
-**Connection Property Metadata**
-| Property | Value|
+**接続プロパティメタデータ**
+| プロパティ | 値|
 |----------|------|
-| Property Code | `tenancy_ocid` |
-| IsSecret | False |
-| Property Level | client |
-| Requried | True |
-| Example Value | ocid1.tenancy.oc1..unique_ID |
-
-
-
+| プロパティコード | `tenancy_ocid` |
+| 機密情報 | いいえ |
+| プロパティレベル | クライアント |
+| 必須 | はい |
+| 例値 | ocid1.tenancy.oc1..unique_ID |
