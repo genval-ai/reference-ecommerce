@@ -1,22 +1,22 @@
-# Customer Segmentation
-A capability that enables the categorization and definition of customer segments based on various attributes and behaviors.
+# 顧客セグメンテーション
+様々な属性や行動に基づいて顧客セグメントを分類および定義する機能を提供します。
 
-**Capability Metadata**
-| Property | Value |
+**機能メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Capability Code | `customer_segmentation` |
+| 機能コード | `customer_segmentation` |
 
-## Capability Operations
+## 機能操作
 
-### Create Customer Segment
-Creates a new customer segment based on specified criteria and rules
+### 顧客セグメントの作成
+指定された基準とルールに基づいて新しい顧客セグメントを作成します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `create_segment` |
+| 操作コード | `create_segment` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -52,7 +52,7 @@ Creates a new customer segment based on specified criteria and rules
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -78,15 +78,15 @@ Creates a new customer segment based on specified criteria and rules
   ]
 }
 ```
-### Assign Customers to Segment
-Assigns customers to an existing segment based on matching criteria
+### セグメントへの顧客の割り当て
+一致する基準に基づいて既存のセグメントに顧客を割り当てます
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `assign_customers` |
+| 操作コード | `assign_customers` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -108,7 +108,7 @@ Assigns customers to an existing segment based on matching criteria
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
@@ -132,15 +132,15 @@ Assigns customers to an existing segment based on matching criteria
   ]
 }
 ```
-### Analyze Segment
-Provides analytical insights about a customer segment
+### セグメントの分析
+顧客セグメントに関する分析的洞察を提供します
 
-**Operation Metadata**
-| Property | Value |
+**操作メタデータ**
+| プロパティ | 値 |
 |----------|------|
-| Operation Code | `analyze_segment` |
+| 操作コード | `analyze_segment` |
 
-#### Input Schema
+#### 入力スキーマ
 ```json operation input schema
 {
   "type": "object",
@@ -161,7 +161,7 @@ Provides analytical insights about a customer segment
 }
 ```
 
-#### Output Schema
+#### 出力スキーマ
 ```json operation output schema
 {
   "type": "object",
