@@ -1,51 +1,51 @@
-# Shopify Cart Management Integration
-Integrate shopping cart operations with Shopify's e-commerce platform, enabling seamless cart creation, item management, and retrieval through Shopify's Admin API.
+# Shopifyカート管理統合
+ショッピングカート操作をShopifyのeコマースプラットフォームと統合し、Shopifyの管理APIを通じてシームレスなカート作成、アイテム管理、および取得を可能にします。
 
-### Integration Metadata
-| Property | Value |
+### 統合メタデータ
+| プロパティ | 値 |
 |----------|------|
-| Integration Code | `shopify-cart-integration` |
+| 統合コード | `shopify-cart-integration` |
 
-### Capability
-| Property | Value |
+### 機能
+| プロパティ | 値 |
 |----------|------|
-| Capability Name | [Cart Management](../capability/cart-management.md) |
-| Capability Code | `cart-management` |
+| 機能名 | [カート管理](../capability/cart-management.md) |
+| 機能コード | `cart-management` |
 
-### Provider Connection Type
-| Property | Value |
+### プロバイダー接続タイプ
+| プロパティ | 値 |
 |----------|------|
-| Provider Name | [Shopify](../provider/shopify.md) |
-| Provider Code | `shopify` |
-| Connection Type Name | [Shopify](../provider/shopify.md#shopify) |
-| Connection Type Code | `shopify` |
+| プロバイダー名 | [Shopify](../provider/shopify.md) |
+| プロバイダーコード | `shopify` |
+| 接続タイプ名 | [Shopify](../provider/shopify.md#shopify) |
+| 接続タイプコード | `shopify` |
 
-## Integration Instructions
-To implement this integration:
+## 統合手順
+この統合を実装するには：
 
-1. Authentication:
-- Use the Shopify access_token for API authorization
-- Include shop_domain to identify the target store
-- Use the specified api_version for endpoint URLs
+1. 認証：
+- API認証にShopifyのaccess_tokenを使用します
+- ターゲットストアを識別するためにshop_domainを含めます
+- エンドポイントURLに指定されたapi_versionを使用します
 
-2. Operation Mappings:
+2. 操作マッピング：
 
 create_cart:
-- Map to Shopify's Draft Order API
-- Create a new draft order using customerId
-- Return draft order ID as cartId
+- ShopifyのドラフトオーダーAPIにマッピングします
+- customerIdを使用して新しいドラフトオーダーを作成します
+- ドラフトオーダーIDをcartIdとして返します
 
 add_item:
-- Use Draft Order API's line items endpoint
-- Convert productId to Shopify's product variant ID
-- Update draft order with new line items
+- ドラフトオーダーAPIのラインアイテムエンドポイントを使用します
+- productIdをShopifyの製品バリアントIDに変換します
+- 新しいラインアイテムでドラフトオーダーを更新します
 
 get_cart:
-- Fetch draft order details using the cartId
-- Calculate totalAmount from line items
-- Format response to match the capability's output schema
+- cartIdを使用してドラフトオーダーの詳細を取得します
+- ラインアイテムからtotalAmountを計算します
+- レスポンスを機能の出力スキーマに合わせてフォーマットします
 
-3. Error Handling:
-- Implement retry logic for rate limits
-- Handle Shopify-specific error responses
-- Validate product availability before adding items
+3. エラー処理：
+- レート制限のためのリトライロジックを実装します
+- Shopify固有のエラーレスポンスを処理します
+- アイテムを追加する前に製品の利用可能性を検証します
