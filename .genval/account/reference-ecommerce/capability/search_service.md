@@ -1,22 +1,22 @@
-# 検索サービス
-小売アプリケーション内の検索インデックスを管理およびクエリするためのサービスで、製品発見およびカタログ探索機能をサポートします。
+# Search Service
+Service for managing and querying search indices within retail applications, supporting product discovery and catalog exploration functionality.
 
-**機能メタデータ**
-| プロパティ | 値 |
+**Capability Metadata**
+| Property | Value |
 |----------|------|
-| 機能コード | `search_service` |
+| Capability Code | `search_service` |
 
-## 機能操作
+## Capability Operations
 
-### 検索インデックスの作成
-指定されたスキーマと設定で新しい検索インデックスを作成します
+### Create Search Index
+Creates a new search index with specified schema and configuration
 
-**操作メタデータ**
-| プロパティ | 値 |
+**Operation Metadata**
+| Property | Value |
 |----------|------|
-| 操作コード | `create_index` |
+| Operation Code | `create_index` |
 
-#### 入力スキーマ
+#### Input Schema
 ```json operation input schema
 {
   "type": "object",
@@ -38,7 +38,7 @@
 }
 ```
 
-#### 出力スキーマ
+#### Output Schema
 ```json operation output schema
 {
   "type": "object",
@@ -56,15 +56,15 @@
   ]
 }
 ```
-### 検索クエリの実行
-フィルタリングとファセット機能を備えた、インデックス付きコンテンツ全体での検索クエリを実行します
+### Execute Search Query
+Performs a search query across indexed content with filtering and faceting capabilities
 
-**操作メタデータ**
-| プロパティ | 値 |
+**Operation Metadata**
+| Property | Value |
 |----------|------|
-| 操作コード | `search_query` |
+| Operation Code | `search_query` |
 
-#### 入力スキーマ
+#### Input Schema
 ```json operation input schema
 {
   "type": "object",
@@ -88,7 +88,7 @@
 }
 ```
 
-#### 出力スキーマ
+#### Output Schema
 ```json operation output schema
 {
   "type": "object",
@@ -109,15 +109,15 @@
   ]
 }
 ```
-### インデックスコンテンツの更新
-既存の検索インデックスに新しいコンテンツを更新または追加します
+### Update Index Content
+Updates or adds new content to an existing search index
 
-**操作メタデータ**
-| プロパティ | 値 |
+**Operation Metadata**
+| Property | Value |
 |----------|------|
-| 操作コード | `update_index` |
+| Operation Code | `update_index` |
 
-#### 入力スキーマ
+#### Input Schema
 ```json operation input schema
 {
   "type": "object",
@@ -136,7 +136,7 @@
 }
 ```
 
-#### 出力スキーマ
+#### Output Schema
 ```json operation output schema
 {
   "type": "object",
