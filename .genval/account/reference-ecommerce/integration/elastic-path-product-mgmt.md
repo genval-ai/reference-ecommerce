@@ -1,51 +1,51 @@
-# Elastic Path製品管理統合
-APIを通じて製品、バリアント、および在庫を管理するために、製品管理機能をElastic Pathのコマースプラットフォームと統合します。
+# Elastic Path Product Management Integration
+Integrate Product Management capabilities with Elastic Path's commerce platform to manage products, variants, and inventory through their API.
 
-### 統合メタデータ
-| プロパティ | 値 |
+### Integration Metadata
+| Property | Value |
 |----------|------|
-| 統合コード | `elastic-path-product-mgmt` |
+| Integration Code | `elastic-path-product-mgmt` |
 
-### 機能
-| プロパティ | 値 |
+### Capability
+| Property | Value |
 |----------|------|
-| 機能名 | [製品管理](../capability/product-management.md) |
-| 機能コード | `product-management` |
+| Capability Name | [Product Management](../capability/product-management.md) |
+| Capability Code | `product-management` |
 
-### プロバイダー接続タイプ
-| プロパティ | 値 |
+### Provider Connection Type
+| Property | Value |
 |----------|------|
-| プロバイダー名 | [Elastic Path](../provider/elastic-path.md) |
-| プロバイダーコード | `elastic-path` |
-| 接続タイプ名 | [Elastic Pathデフォルト接続](../provider/elastic-path.md#elastic-path-default) |
-| 接続タイプコード | `elastic-path-default` |
+| Provider Name | [Elastic Path](../provider/elastic-path.md) |
+| Provider Code | `elastic-path` |
+| Connection Type Name | [Elastic Path Default Connection](../provider/elastic-path.md#elastic-path-default) |
+| Connection Type Code | `elastic-path-default` |
 
-## 統合手順
-この統合を実装するには：
+## Integration Instructions
+To implement this integration:
 
-1. 認証設定：
-- client_idとclient_secretを使用してElastic PathからOAuthトークンを取得します
-- すべてのAPIリクエストにBearerトークンとしてトークンを含めます
+1. Authentication Setup:
+- Use the client_id and client_secret to obtain an OAuth token from Elastic Path
+- Include the token in all API requests as a Bearer token
 
-2. APIエンドポイント：
-- すべてのAPIリクエストはapi_base_urlプロパティに基づいて行います
-- 製品エンドポイントは通常：{api_base_url}/v2/products/となります
+2. API Endpoints:
+- Base all API requests on the api_base_url property
+- Product endpoints will typically be: {api_base_url}/v2/products/
 
-3. 操作マッピング：
+3. Operation Mappings:
 
-製品の取得（get_product）：
-- {api_base_url}/v2/products/{productId}にHTTP GETを行います
-- response.dataを出力スキーマにマッピングします
-- バリアントデータが適切にネストされていることを確認します
+Get Product (get_product):
+- HTTP GET to {api_base_url}/v2/products/{productId}
+- Map response.data to output schema
+- Ensure variant data is properly nested
 
-製品の作成（create_product）：
-- {api_base_url}/v2/productsにHTTP POSTを行います
-- 入力スキーマをElastic Pathの製品フォーマットに変換します
-- リクエストボディに必要なすべてのフィールドを含めます
+Create Product (create_product):
+- HTTP POST to {api_base_url}/v2/products
+- Convert input schema to Elastic Path product format
+- Include all required fields in request body
 
-製品の更新（update_product）：
-- {api_base_url}/v2/products/{id}にHTTP PUTを行います
-- リクエストボディには変更されたフィールドのみを送信します
-- 成功のためにレスポンスステータスを確認します
+Update Product (update_product):
+- HTTP PUT to {api_base_url}/v2/products/{id}
+- Send only modified fields in request body
+- Check response status for success
 
-すべての操作に対して、適切なステータスコード処理とレスポンスマッピングを含むエラー処理が実装されていることを確認してください。
+Ensure error handling is implemented for all operations with appropriate status code handling and response mapping.
