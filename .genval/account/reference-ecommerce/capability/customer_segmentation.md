@@ -1,22 +1,22 @@
-# 顧客セグメンテーション
-様々な属性や行動に基づいて顧客セグメントを分類および定義する機能を提供します。
+# Customer Segmentation
+A capability that enables the categorization and definition of customer segments based on various attributes and behaviors.
 
-**機能メタデータ**
-| プロパティ | 値 |
+**Capability Metadata**
+| Property | Value |
 |----------|------|
-| 機能コード | `customer_segmentation` |
+| Capability Code | `customer_segmentation` |
 
-## 機能操作
+## Capability Operations
 
-### 顧客セグメントの作成
-指定された基準とルールに基づいて新しい顧客セグメントを作成します
+### Create Customer Segment
+Creates a new customer segment based on specified criteria and rules
 
-**操作メタデータ**
-| プロパティ | 値 |
+**Operation Metadata**
+| Property | Value |
 |----------|------|
-| 操作コード | `create_segment` |
+| Operation Code | `create_segment` |
 
-#### 入力スキーマ
+#### Input Schema
 ```json operation input schema
 {
   "type": "object",
@@ -52,7 +52,7 @@
 }
 ```
 
-#### 出力スキーマ
+#### Output Schema
 ```json operation output schema
 {
   "type": "object",
@@ -78,15 +78,15 @@
   ]
 }
 ```
-### セグメントへの顧客の割り当て
-一致する基準に基づいて既存のセグメントに顧客を割り当てます
+### Assign Customers to Segment
+Assigns customers to an existing segment based on matching criteria
 
-**操作メタデータ**
-| プロパティ | 値 |
+**Operation Metadata**
+| Property | Value |
 |----------|------|
-| 操作コード | `assign_customers` |
+| Operation Code | `assign_customers` |
 
-#### 入力スキーマ
+#### Input Schema
 ```json operation input schema
 {
   "type": "object",
@@ -108,7 +108,7 @@
 }
 ```
 
-#### 出力スキーマ
+#### Output Schema
 ```json operation output schema
 {
   "type": "object",
@@ -132,15 +132,15 @@
   ]
 }
 ```
-### セグメントの分析
-顧客セグメントに関する分析的洞察を提供します
+### Analyze Segment
+Provides analytical insights about a customer segment
 
-**操作メタデータ**
-| プロパティ | 値 |
+**Operation Metadata**
+| Property | Value |
 |----------|------|
-| 操作コード | `analyze_segment` |
+| Operation Code | `analyze_segment` |
 
-#### 入力スキーマ
+#### Input Schema
 ```json operation input schema
 {
   "type": "object",
@@ -161,7 +161,7 @@
 }
 ```
 
-#### 出力スキーマ
+#### Output Schema
 ```json operation output schema
 {
   "type": "object",
