@@ -1,22 +1,22 @@
-# ロイヤルティサービス
-包括的なAPIインターフェースを通じて、ロイヤルティプログラムのメンバー、取引、報酬、およびプロモーション活動を管理します。
+# Loyalty Service
+Manages loyalty program members, their transactions, rewards, and promotional activities through a comprehensive API interface.
 
-**機能メタデータ**
-| プロパティ | 値 |
+**Capability Metadata**
+| Property | Value |
 |----------|------|
-| 機能コード | `loyalty_service` |
+| Capability Code | `loyalty_service` |
 
-## 機能操作
+## Capability Operations
 
-### ロイヤルティメンバーの作成
-プロフィール情報を含む新しいロイヤルティプログラムメンバーを登録します
+### Create Loyalty Member
+Register a new loyalty program member with their profile information
 
-**操作メタデータ**
-| プロパティ | 値 |
+**Operation Metadata**
+| Property | Value |
 |----------|------|
-| 操作コード | `create_member` |
+| Operation Code | `create_member` |
 
-#### 入力スキーマ
+#### Input Schema
 ```json operation input schema
 {
   "type": "object",
@@ -43,7 +43,7 @@
 }
 ```
 
-#### 出力スキーマ
+#### Output Schema
 ```json operation output schema
 {
   "type": "object",
@@ -61,15 +61,15 @@
   }
 }
 ```
-### ロイヤルティ取引の記録
-ロイヤルティメンバーの購入または取引を記録し、ポイントを計算します
+### Record Loyalty Transaction
+Record a purchase or transaction for a loyalty member and calculate points
 
-**操作メタデータ**
-| プロパティ | 値 |
+**Operation Metadata**
+| Property | Value |
 |----------|------|
-| 操作コード | `record_transaction` |
+| Operation Code | `record_transaction` |
 
-#### 入力スキーマ
+#### Input Schema
 ```json operation input schema
 {
   "type": "object",
@@ -92,7 +92,7 @@
 }
 ```
 
-#### 出力スキーマ
+#### Output Schema
 ```json operation output schema
 {
   "type": "object",
@@ -109,15 +109,15 @@
   }
 }
 ```
-### プロモーションの適用
-ロイヤルティメンバーのアカウントにプロモーションオファーを適用します
+### Apply Promotion
+Apply a promotional offer to a loyalty member's account
 
-**操作メタデータ**
-| プロパティ | 値 |
+**Operation Metadata**
+| Property | Value |
 |----------|------|
-| 操作コード | `apply_promotion` |
+| Operation Code | `apply_promotion` |
 
-#### 入力スキーマ
+#### Input Schema
 ```json operation input schema
 {
   "type": "object",
@@ -140,7 +140,7 @@
 }
 ```
 
-#### 出力スキーマ
+#### Output Schema
 ```json operation output schema
 {
   "type": "object",
