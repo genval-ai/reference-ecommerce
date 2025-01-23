@@ -1,77 +1,80 @@
 # Salesforce
-Salesforceは、CRM、AI、データ、およびトラストを組み合わせた統一されたEinstein 1プラットフォームを通じて、企業が顧客とつながることを可能にする#1 AI CRMです。
+Salesforce, the #1 AI CRM, enables companies to connect with customers through a unified Einstein 1 platform that combines CRM, AI, Data, and Trust.
 
-**プロバイダーメタデータ**
-| プロパティ | 値 |
+**Provider Metadata**
+| Property | Value |
 |----------|------|
-| 機能コード | `salesforce` |
+| Capability Code | `salesforce` |
 
-## プロバイダー接続タイプ
+## Provider Connection Types
 
 ### Salesforce
-OAuth 2.0認証を使用してSalesforce REST APIにアクセスするためにSalesforceに接続します。
+Connect to Salesforce using OAuth 2.0 authentication to access the Salesforce REST API.
 
-**接続タイプメタデータ**
-| プロパティ | 値|
+**Connection Type Metadata**
+| Property | Value|
 |----------|------|
-| 接続タイプコード | `salesforce` |
+| Connection Type Code | `salesforce` |
 
-#### クライアントID
-Salesforce接続アプリから取得したOAuth 2.0クライアントID
+#### Client ID
+The OAuth 2.0 client ID obtained from your Salesforce Connected App
 
-**接続プロパティメタデータ**
-| プロパティ | 値|
+**Connection Property Metadata**
+| Property | Value|
 |----------|------|
-| プロパティコード | `client_id` |
-| 機密情報 | いいえ |
-| プロパティレベル | クライアント |
-| 必須 | はい |
-| 例値 | 3MVG9I1Wl1qzKFBXX... |
+| Property Code | `client_id` |
+| IsSecret | False |
+| Property Level | client |
+| Requried | True |
+| Example Value | 3MVG9I1Wl1qzKFBXX... |
 
-#### クライアントシークレット
-Salesforce接続アプリから取得したOAuth 2.0クライアントシークレット
+#### Client Secret
+The OAuth 2.0 client secret obtained from your Salesforce Connected App
 
-**接続プロパティメタデータ**
-| プロパティ | 値|
+**Connection Property Metadata**
+| Property | Value|
 |----------|------|
-| プロパティコード | `client_secret` |
-| 機密情報 | はい |
-| プロパティレベル | クライアント |
-| 必須 | はい |
-| 例値 | ABC123DEF456... |
+| Property Code | `client_secret` |
+| IsSecret | True |
+| Property Level | client |
+| Requried | True |
+| Example Value | ABC123DEF456... |
 
-#### アクセストークン
-APIリクエストを認証するためのOAuth 2.0アクセストークン
+#### Access Token
+The OAuth 2.0 access token for authenticating API requests
 
-**接続プロパティメタデータ**
-| プロパティ | 値|
+**Connection Property Metadata**
+| Property | Value|
 |----------|------|
-| プロパティコード | `access_token` |
-| 機密情報 | はい |
-| プロパティレベル | アイデンティティ |
-| 必須 | はい |
-| 例値 | 00D5i000000iQ7q!AR8AQH4x... |
+| Property Code | `access_token` |
+| IsSecret | True |
+| Property Level | identity |
+| Requried | True |
+| Example Value | 00D5i000000iQ7q!AR8AQH4x... |
 
-#### インスタンスURL
-SalesforceインスタンスのURL
+#### Instance URL
+The URL of your Salesforce instance
 
-**接続プロパティメタデータ**
-| プロパティ | 値|
+**Connection Property Metadata**
+| Property | Value|
 |----------|------|
-| プロパティコード | `instance_url` |
-| 機密情報 | いいえ |
-| プロパティレベル | アイデンティティ |
-| 必須 | はい |
-| 例値 | https://yourorg.my.salesforce.com |
+| Property Code | `instance_url` |
+| IsSecret | False |
+| Property Level | identity |
+| Requried | True |
+| Example Value | https://yourorg.my.salesforce.com |
 
-#### リフレッシュトークン
-新しいアクセストークンを取得するためのOAuth 2.0リフレッシュトークン
+#### Refresh Token
+The OAuth 2.0 refresh token for obtaining new access tokens
 
-**接続プロパティメタデータ**
-| プロパティ | 値|
+**Connection Property Metadata**
+| Property | Value|
 |----------|------|
-| プロパティコード | `refresh_token` |
-| 機密情報 | はい |
-| プロパティレベル | アイデンティティ |
-| 必須 | はい |
-| 例値 | 5Aep8616_vXX... |
+| Property Code | `refresh_token` |
+| IsSecret | True |
+| Property Level | identity |
+| Requried | True |
+| Example Value | 5Aep8616_vXX... |
+
+
+
