@@ -1,46 +1,46 @@
-# Bluestone PIM製品統合
-製品データの同期（製品情報の作成、取得、更新を含む）のために、製品管理機能をBluestone PIMと統合します。
+# Bluestone PIM Product Integration
+Integrate product management capabilities with Bluestone PIM to synchronize product data, including creation, retrieval, and updates of product information.
 
-### 統合メタデータ
-| プロパティ | 値 |
+### Integration Metadata
+| Property | Value |
 |----------|------|
-| 統合コード | `bluestone-pim-product-mgmt` |
+| Integration Code | `bluestone-pim-product-mgmt` |
 
-### 機能
-| プロパティ | 値 |
+### Capability
+| Property | Value |
 |----------|------|
-| 機能名 | [製品管理](../capability/product-management.md) |
-| 機能コード | `product-management` |
+| Capability Name | [Product Management](../capability/product-management.md) |
+| Capability Code | `product-management` |
 
-### プロバイダー接続タイプ
-| プロパティ | 値 |
+### Provider Connection Type
+| Property | Value |
 |----------|------|
-| プロバイダー名 | [Bluestone PIM](../provider/bluestone-pim.md) |
-| プロバイダーコード | `bluestone-pim` |
-| 接続タイプ名 | [Bluestone PIM](../provider/bluestone-pim.md#bluestone-pim) |
-| 接続タイプコード | `bluestone-pim` |
+| Provider Name | [Bluestone PIM](../provider/bluestone-pim.md) |
+| Provider Code | `bluestone-pim` |
+| Connection Type Name | [Bluestone PIM](../provider/bluestone-pim.md#bluestone-pim) |
+| Connection Type Code | `bluestone-pim` |
 
-## 統合手順
-この統合を実装するには：
+## Integration Instructions
+To implement this integration:
 
-1. 認証：
-- すべてのリクエストで'api_key'ヘッダーに提供されたAPIキーを使用します
-- APIコールのルートエンドポイントとしてbase_urlを使用します
+1. Authentication:
+- Use the provided API Key in the 'api_key' header for all requests
+- Use the base_url as the root endpoint for API calls
 
-2. 操作マッピング：
+2. Operation Mappings:
 
-製品取得（get_product）：
-- エンドポイント：GET {base_url}/products/{productId}
-- レスポンスフィールドを出力スキーマに合わせてマッピングし、バリアントデータが適切に構造化されていることを確認します
+Get Product (get_product):
+- Endpoint: GET {base_url}/products/{productId}
+- Map the response fields to match the output schema, ensuring variant data is properly structured
 
-製品作成（create_product）：
-- エンドポイント：POST {base_url}/products
-- 入力スキーマをBluestoneのフォーマットに変換し、必要なすべてのフィールドを含めます
-- レスポンスで作成された製品IDと詳細を返します
+Create Product (create_product):
+- Endpoint: POST {base_url}/products
+- Convert the input schema to Bluestone's format, including all required fields
+- Return the created product ID and details in the response
 
-製品更新（update_product）：
-- エンドポイント：PUT {base_url}/products/{id}
-- リクエストボディには変更されたフィールドのみを送信します
-- APIレスポンスに基づいて成功ステータスを返します
+Update Product (update_product):
+- Endpoint: PUT {base_url}/products/{id}
+- Send only modified fields in the request body
+- Return success status based on the API response
 
-機能のスキーマ要件に対する適切なエラーハンドリングとレスポンスの検証を確実に行ってください。
+Ensure proper error handling and validation of responses against the capability's schema requirements.
