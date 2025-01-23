@@ -1,22 +1,22 @@
-# カート管理
-ショッピングカートとカートアイテムを管理するためのREST APIサービスで、カートデータの作成、変更、取得を可能にします。
+# Cart Management
+REST API service for managing shopping carts and cart items, enabling creation, modification and retrieval of cart data.
 
-**機能メタデータ**
-| プロパティ | 値 |
+**Capability Metadata**
+| Property | Value |
 |----------|------|
-| 機能コード | `cart-management` |
+| Capability Code | `cart-management` |
 
-## 機能操作
+## Capability Operations
 
-### カート作成
-顧客のために新しい空のショッピングカートを作成します
+### Create Cart
+Creates a new empty shopping cart for a customer
 
-**操作メタデータ**
-| プロパティ | 値 |
+**Operation Metadata**
+| Property | Value |
 |----------|------|
-| 操作コード | `create_cart` |
+| Operation Code | `create_cart` |
 
-#### 入力スキーマ
+#### Input Schema
 ```json operation input schema
 {
   "type": "object",
@@ -31,7 +31,7 @@
 }
 ```
 
-#### 出力スキーマ
+#### Output Schema
 ```json operation output schema
 {
   "type": "object",
@@ -50,15 +50,15 @@
   ]
 }
 ```
-### カートにアイテムを追加
-既存のショッピングカートに商品アイテムを追加します
+### Add Item to Cart
+Adds a product item to an existing shopping cart
 
-**操作メタデータ**
-| プロパティ | 値 |
+**Operation Metadata**
+| Property | Value |
 |----------|------|
-| 操作コード | `add_item` |
+| Operation Code | `add_item` |
 
-#### 入力スキーマ
+#### Input Schema
 ```json operation input schema
 {
   "type": "object",
@@ -82,7 +82,7 @@
 }
 ```
 
-#### 出力スキーマ
+#### Output Schema
 ```json operation output schema
 {
   "type": "object",
@@ -111,15 +111,15 @@
   ]
 }
 ```
-### カート詳細の取得
-ショッピングカートの現在の状態を取得します
+### Get Cart Details
+Retrieves the current state of a shopping cart
 
-**操作メタデータ**
-| プロパティ | 値 |
+**Operation Metadata**
+| Property | Value |
 |----------|------|
-| 操作コード | `get_cart` |
+| Operation Code | `get_cart` |
 
-#### 入力スキーマ
+#### Input Schema
 ```json operation input schema
 {
   "type": "object",
@@ -134,7 +134,7 @@
 }
 ```
 
-#### 出力スキーマ
+#### Output Schema
 ```json operation output schema
 {
   "type": "object",
