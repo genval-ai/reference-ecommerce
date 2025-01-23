@@ -1,14 +1,14 @@
-# Elastic Pathを利用したコマーススタック
-このスタックは、すべての機能にElastic Pathを利用しています。
+# Elastic Path powered Commerce Stack
+This stack is powered by Elastic Path for all capabilities.
 
-| プロパティ | 値 |
+| Property | Value |
 |----------|------|
-| スタックコード | `ep-stack` |
+| Stack Code | `ep-stack` |
 
-## 機能統合
+## Capability Integrations
 
-| 機能 | 統合 |
+| Capability | Integration |
 |----------|------|
-|  [`product-management`](../capability/product-management.md) | Elastic Path製品管理統合 [`elastic-path-product-mgmt`](../integration/elastic-path-product-mgmt.md) |
-|  [`pricing_service`](../capability/pricing_service.md) | Elastic Path価格設定統合 [`elastic-path-pricing`](../integration/elastic-path-pricing.md) |
-|  [`cart-management`](../capability/cart-management.md) | Elastic Pathカート統合 [`elastic-path-cart`](../integration/elastic-path-cart.md) |
+|  [`product-management`](../capability/product-management.md) | Elastic Path Product Management Integration [`elastic-path-product-mgmt`](../integration/elastic-path-product-mgmt.md) |
+|  [`pricing_service`](../capability/pricing_service.md) | Elastic Path Pricing Integration [`elastic-path-pricing`](../integration/elastic-path-pricing.md) |
+|  [`cart-management`](../capability/cart-management.md) | Elastic Path Cart Integration [`elastic-path-cart`](../integration/elastic-path-cart.md) |
