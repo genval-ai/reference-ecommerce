@@ -1,22 +1,22 @@
-# 税金計算
-複数の国にわたるeコマース取引の税金を計算するためのRESTfulサービス。日本および国際市場の税金計算に特化しています。
+# Tax Calculation
+RESTful service for calculating taxes in e-commerce transactions across multiple countries, specializing in Japanese and international market tax computations.
 
-**機能メタデータ**
-| プロパティ | 値 |
+**Capability Metadata**
+| Property | Value |
 |----------|------|
-| 機能コード | `tax_calculation` |
+| Capability Code | `tax_calculation` |
 
-## 機能操作
+## Capability Operations
 
-### 取引税の計算
-製品詳細と管轄に基づいて、特定のeコマース取引に適用される税金を計算します。
+### Calculate Transaction Tax
+Calculates applicable taxes for a given e-commerce transaction based on product details and jurisdiction.
 
-**操作メタデータ**
-| プロパティ | 値 |
+**Operation Metadata**
+| Property | Value |
 |----------|------|
-| 操作コード | `calculate_tax` |
+| Operation Code | `calculate_tax` |
 
-#### 入力スキーマ
+#### Input Schema
 ```json operation input schema
 {
   "type": "object",
@@ -45,7 +45,7 @@
 }
 ```
 
-#### 出力スキーマ
+#### Output Schema
 ```json operation output schema
 {
   "type": "object",
@@ -80,15 +80,15 @@
   ]
 }
 ```
-### 税率の取得
-特定の国または地域の現在の税率を取得します。
+### Get Tax Rates
+Retrieves current tax rates for a specific country or region.
 
-**操作メタデータ**
-| プロパティ | 値 |
+**Operation Metadata**
+| Property | Value |
 |----------|------|
-| 操作コード | `get_tax_rates` |
+| Operation Code | `get_tax_rates` |
 
-#### 入力スキーマ
+#### Input Schema
 ```json operation input schema
 {
   "type": "object",
@@ -109,7 +109,7 @@
 }
 ```
 
-#### 出力スキーマ
+#### Output Schema
 ```json operation output schema
 {
   "type": "object",
