@@ -1,41 +1,44 @@
 # Oracle Cloud Infrastructure
-完全なクラウドインフラストラクチャ — OCIからのマルチクラウド構成でクラウドインフラストラクチャ機能を最適化します。OCIは、エッジコンピューティング、オンプレミスなど、さまざまな展開オプションを提供します。
+Complete Cloud Infrastructure — Optimize your cloud infrastructure capabilities with a multicloud configuration from OCI. OCI offers a range of deployment options such as edge computing, on-premises, 
 
-**プロバイダーメタデータ**
-| プロパティ | 値 |
+**Provider Metadata**
+| Property | Value |
 |----------|------|
-| 機能コード | `oci` |
+| Capability Code | `oci` |
 
-## プロバイダー接続タイプ
+## Provider Connection Types
 
-### OCI統合認証
-コードがOCI内で実行され、認証のためにロールを引き受けることができる統合認証を使用します。OCIのロールベースのアクセスを通じて認証が処理されるため、資格情報は不要です。
+### OCI Integrated Authentication
+Uses integrated authentication where the code runs inside OCI and can assume a role for authentication. No credentials needed as authentication is handled through OCI's role-based access.
 
-**接続タイプメタデータ**
-| プロパティ | 値|
+**Connection Type Metadata**
+| Property | Value|
 |----------|------|
-| 接続タイプコード | `oci-integrated` |
+| Connection Type Code | `oci-integrated` |
 
-#### リージョン
-サービスが配置されているOCIリージョン（例：us-phoenix-1、us-ashburn-1）
+#### Region
+The OCI region where the service is located (e.g., us-phoenix-1, us-ashburn-1)
 
-**接続プロパティメタデータ**
-| プロパティ | 値|
+**Connection Property Metadata**
+| Property | Value|
 |----------|------|
-| プロパティコード | `region` |
-| 機密情報 | いいえ |
-| プロパティレベル | クライアント |
-| 必須 | はい |
-| 例値 | us-phoenix-1 |
+| Property Code | `region` |
+| IsSecret | False |
+| Property Level | client |
+| Requried | True |
+| Example Value | us-phoenix-1 |
 
-#### テナンシーOCID
-テナンシーのOCID（Oracle Cloud Identifier）
+#### Tenancy OCID
+The OCID (Oracle Cloud Identifier) of your tenancy
 
-**接続プロパティメタデータ**
-| プロパティ | 値|
+**Connection Property Metadata**
+| Property | Value|
 |----------|------|
-| プロパティコード | `tenancy_ocid` |
-| 機密情報 | いいえ |
-| プロパティレベル | クライアント |
-| 必須 | はい |
-| 例値 | ocid1.tenancy.oc1..unique_ID |
+| Property Code | `tenancy_ocid` |
+| IsSecret | False |
+| Property Level | client |
+| Requried | True |
+| Example Value | ocid1.tenancy.oc1..unique_ID |
+
+
+
