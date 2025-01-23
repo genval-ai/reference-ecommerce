@@ -1,33 +1,33 @@
-# Elastic Path価格設定統合
-クライアント資格情報認証を使用して、リアルタイムの製品価格情報を取得するためにElastic Pathの価格設定APIと統合します。
+# Elastic Path Pricing Integration
+Integrates with Elastic Path's pricing API to retrieve real-time product pricing information using client credentials authentication.
 
-### 統合メタデータ
-| プロパティ | 値 |
+### Integration Metadata
+| Property | Value |
 |----------|------|
-| 統合コード | `elastic-path-pricing` |
+| Integration Code | `elastic-path-pricing` |
 
-### 機能
-| プロパティ | 値 |
+### Capability
+| Property | Value |
 |----------|------|
-| 機能名 | [価格設定サービス](../capability/pricing_service.md) |
-| 機能コード | `pricing_service` |
+| Capability Name | [Pricing Service](../capability/pricing_service.md) |
+| Capability Code | `pricing_service` |
 
-### プロバイダー接続タイプ
-| プロパティ | 値 |
+### Provider Connection Type
+| Property | Value |
 |----------|------|
-| プロバイダー名 | [Elastic Path](../provider/elastic-path.md) |
-| プロバイダーコード | `elastic-path` |
-| 接続タイプ名 | [Elastic Pathデフォルト接続](../provider/elastic-path.md#elastic-path-default) |
-| 接続タイプコード | `elastic-path-default` |
+| Provider Name | [Elastic Path](../provider/elastic-path.md) |
+| Provider Code | `elastic-path` |
+| Connection Type Name | [Elastic Path Default Connection](../provider/elastic-path.md#elastic-path-default) |
+| Connection Type Code | `elastic-path-default` |
 
-## 統合手順
-この統合を実装するには：
+## Integration Instructions
+To implement this integration:
 
-1. クライアント資格情報とAPIベースURLを使用してElastic Path接続を構成します
-2. 価格設定サービスのitemIdをElastic Pathの製品IDにマッピングします
-3. get_item_price操作を呼び出し、以下を実行します：
-   - 提供された資格情報を使用して認証します
-   - {api_base_url}/catalog/products/{itemId}/priceにGETリクエストを行います
-   - レスポンスを期待される出力スキーマに変換します
+1. Configure the Elastic Path connection with your client credentials and API base URL
+2. Map the itemId from the pricing service to your Elastic Path product ID
+3. Call the get_item_price operation, which will:
+   - Authenticate using the provided credentials
+   - Make a GET request to {api_base_url}/catalog/products/{itemId}/price
+   - Transform the response to match the expected output schema
 
-注：locationIdパラメータはオプションで、Elastic Path構成で場所固有の価格設定がサポートされている場合に使用できます。
+Note: The locationId parameter is optional and can be used to get location-specific pricing if supported by your Elastic Path configuration.
