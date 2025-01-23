@@ -1,47 +1,47 @@
-# Elastic Pathカート統合
-REST APIを介してショッピングカートを管理するためのカート管理機能とElastic Patheコマースプラットフォーム間の統合
+# Elastic Path Cart Integration
+Integration between Cart Management capability and Elastic Path e-commerce platform for managing shopping carts via their REST API
 
-### 統合メタデータ
-| プロパティ | 値 |
+### Integration Metadata
+| Property | Value |
 |----------|------|
-| 統合コード | `elastic-path-cart` |
+| Integration Code | `elastic-path-cart` |
 
-### 機能
-| プロパティ | 値 |
+### Capability
+| Property | Value |
 |----------|------|
-| 機能名 | [カート管理](../capability/cart-management.md) |
-| 機能コード | `cart-management` |
+| Capability Name | [Cart Management](../capability/cart-management.md) |
+| Capability Code | `cart-management` |
 
-### プロバイダー接続タイプ
-| プロパティ | 値 |
+### Provider Connection Type
+| Property | Value |
 |----------|------|
-| プロバイダー名 | [Elastic Path](../provider/elastic-path.md) |
-| プロバイダーコード | `elastic-path` |
-| 接続タイプ名 | [Elastic Pathデフォルト接続](../provider/elastic-path.md#elastic-path-default) |
-| 接続タイプコード | `elastic-path-default` |
+| Provider Name | [Elastic Path](../provider/elastic-path.md) |
+| Provider Code | `elastic-path` |
+| Connection Type Name | [Elastic Path Default Connection](../provider/elastic-path.md#elastic-path-default) |
+| Connection Type Code | `elastic-path-default` |
 
-## 統合手順
-この統合を実装するには：
+## Integration Instructions
+To implement this integration:
 
-1. 認証：
-- client_idとclient_secretを使用してElastic PathからOAuthトークンを取得します
-- すべてのリクエストのAuthorizationヘッダーにトークンを含めます
+1. Authentication:
+- Use the client_id and client_secret to obtain an OAuth token from Elastic Path
+- Include the token in the Authorization header for all requests
 
-2. 操作マッピング：
+2. Operation Mapping:
 
 create_cart:
-- {api_base_url}/v2/cartsにPOSTします
-- リクエストボディにcustomerIdを含めます
-- レスポンスのcartIdをElastic Pathのカート識別子にマッピングします
+- POST to {api_base_url}/v2/carts
+- Include customerId in request body
+- Map response cartId to Elastic Path's cart identifier
 
 add_item:
-- {api_base_url}/v2/carts/{cartId}/itemsにPOSTします
-- productIdと数量をElastic Pathのアイテムフォーマットに変換します
-- レスポンスを処理してカートアイテム配列をマッピングします
+- POST to {api_base_url}/v2/carts/{cartId}/items
+- Transform productId and quantity to Elastic Path's item format
+- Handle response to map cart items array
 
 get_cart:
-- {api_base_url}/v2/carts/{cartId}からGETします
-- レスポンスフィールドを機能スキーマに合わせてマッピングします
-- アイテム配列からtotalAmountを計算します
+- GET from {api_base_url}/v2/carts/{cartId}
+- Map response fields to match capability schema
+- Calculate totalAmount from items array
 
-スキーマに対する適切なエラー処理とレスポンス検証を確実に行ってください。
+Ensure proper error handling and response validation against schemas.
