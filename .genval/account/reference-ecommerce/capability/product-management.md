@@ -1,22 +1,22 @@
-# 製品管理
-小売システム内の製品とカテゴリデータを管理し、製品、バリアント、およびカテゴリの作成、読み取り、更新、削除のための操作を提供します。
+# Product Management
+Manages product and category data within the retail system, providing operations for creating, reading, updating and deleting products, variants and categories.
 
-**機能メタデータ**
-| プロパティ | 値 |
+**Capability Metadata**
+| Property | Value |
 |----------|------|
-| 機能コード | `product-management` |
+| Capability Code | `product-management` |
 
-## 機能操作
+## Capability Operations
 
-### 製品の取得
-IDによる詳細な製品情報の取得
+### Get Product
+Retrieves detailed product information by ID
 
-**操作メタデータ**
-| プロパティ | 値 |
+**Operation Metadata**
+| Property | Value |
 |----------|------|
-| 操作コード | `get_product` |
+| Operation Code | `get_product` |
 
-#### 入力スキーマ
+#### Input Schema
 ```json operation input schema
 {
   "type": "object",
@@ -31,7 +31,7 @@ IDによる詳細な製品情報の取得
 }
 ```
 
-#### 出力スキーマ
+#### Output Schema
 ```json operation output schema
 {
   "type": "object",
@@ -76,15 +76,15 @@ IDによる詳細な製品情報の取得
   ]
 }
 ```
-### 製品の作成
-システムに新しい製品を作成します
+### Create Product
+Creates a new product in the system
 
-**操作メタデータ**
-| プロパティ | 値 |
+**Operation Metadata**
+| Property | Value |
 |----------|------|
-| 操作コード | `create_product` |
+| Operation Code | `create_product` |
 
-#### 入力スキーマ
+#### Input Schema
 ```json operation input schema
 {
   "type": "object",
@@ -109,7 +109,7 @@ IDによる詳細な製品情報の取得
 }
 ```
 
-#### 出力スキーマ
+#### Output Schema
 ```json operation output schema
 {
   "type": "object",
@@ -135,15 +135,15 @@ IDによる詳細な製品情報の取得
   ]
 }
 ```
-### 製品の更新
-既存の製品情報を更新します
+### Update Product
+Updates an existing product's information
 
-**操作メタデータ**
-| プロパティ | 値 |
+**Operation Metadata**
+| Property | Value |
 |----------|------|
-| 操作コード | `update_product` |
+| Operation Code | `update_product` |
 
-#### 入力スキーマ
+#### Input Schema
 ```json operation input schema
 {
   "type": "object",
@@ -170,7 +170,7 @@ IDによる詳細な製品情報の取得
 }
 ```
 
-#### 出力スキーマ
+#### Output Schema
 ```json operation output schema
 {
   "type": "object",
