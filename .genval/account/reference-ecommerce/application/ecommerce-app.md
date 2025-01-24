@@ -1,5 +1,7 @@
-# 
+# ECommerce App
 An online shopping platform where users can browse products, manage their cart, and complete purchases.
+
+![ECommerce App](./ecommerce-app.png)
 
 **Application Metadata**
 | Property | Value |
