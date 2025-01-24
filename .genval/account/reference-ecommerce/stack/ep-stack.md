@@ -9,6 +9,6 @@ This stack is powered by Elastic Path for all capabilities.
 
 | Capability | Integration |
 |----------|------|
-|  [`product-management`](../capability/product-management.md) | Elastic Path Product Management Integration [`elastic-path-product-mgmt`](../integration/elastic-path-product-mgmt.md) |
+|  [`product-management`](../capability/product-management.md) | Shopify Product Management Integration [`shopify-product-management`](../integration/shopify-product-management.md) |
 |  [`pricing_service`](../capability/pricing_service.md) | Elastic Path Pricing Integration [`elastic-path-pricing`](../integration/elastic-path-pricing.md) |
 |  [`cart-management`](../capability/cart-management.md) | Elastic Path Cart Integration [`elastic-path-cart`](../integration/elastic-path-cart.md) |
