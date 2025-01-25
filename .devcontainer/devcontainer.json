@@ -1,6 +1,6 @@
 {
     "name": "Shopify Powered E-commerce Stack",
-    "image": "mcr.microsoft.com/devcontainers/typescript-node:0-18",
+    "image": "mcr.microsoft.com/devcontainers/typescript-node:0-16",
     "features": {
         "ghcr.io/devcontainers/features/aws-cli:1": {},
         "ghcr.io/devcontainers/features/github-cli:1": {}
@@ -35,6 +35,6 @@
             }
         }
     },
-    "postCreateCommand": "npm install -g @angular/cli && npm install",
+    "postCreateCommand": "npm install -g @angular/cli@13.3.0 && npm install",
     "remoteUser": "node"
 }
