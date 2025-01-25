@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const environment = {\n  production: true,\n  apiEndpoint: 'https://webhook-test.mautic.com/wl53sowl'\n};","map":null,"metadata":{},"sourceType":"module"}
