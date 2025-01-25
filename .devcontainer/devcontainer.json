@@ -14,7 +14,10 @@
                 "ms-vscode.vscode-typescript-tslint-plugin",
                 "redhat.vscode-yaml",
                 "amazonwebservices.aws-toolkit-vscode",
-                "angular.ng-template"
+                "angular.ng-template",
+                "ms-vscode.azure-account",
+                "ms-kubernetes-tools.vscode-kubernetes-tools",
+                "eamodio.gitlens"
             ],
             "settings": {
                 "terminal.integrated.defaultProfile.linux": "bash",
@@ -35,6 +38,6 @@
             }
         }
     },
-    "postCreateCommand": "npm install -g @angular/cli@13.3.0 typescript@4.6.2 && npm install",
+    "postCreateCommand": "npm install -g @angular/cli@13.3.0 typescript@4.6.2 aws-cdk && npm install",
     "remoteUser": "node"
 }
