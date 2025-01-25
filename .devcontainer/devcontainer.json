@@ -13,7 +13,8 @@
                 "ms-azuretools.vscode-docker",
                 "ms-vscode.vscode-typescript-tslint-plugin",
                 "redhat.vscode-yaml",
-                "amazonwebservices.aws-toolkit-vscode"
+                "amazonwebservices.aws-toolkit-vscode",
+                "angular.ng-template"
             ],
             "settings": {
                 "terminal.integrated.defaultProfile.linux": "bash",
@@ -34,6 +35,6 @@
             }
         }
     },
-    "postCreateCommand": "npm install -g aws-cdk && npm install",
+    "postCreateCommand": "npm install -g @angular/cli && npm install",
     "remoteUser": "node"
 }
