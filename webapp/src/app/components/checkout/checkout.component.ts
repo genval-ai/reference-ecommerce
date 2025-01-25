@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { CartService } from '../../services/cart.service';
 import { OrderService } from '../../services/order.service';
 import { Router } from '@angular/router';
@@ -33,10 +33,10 @@ import { Router } from '@angular/router';
   `
 })
 export class CheckoutComponent implements OnInit {
-  checkoutForm: FormGroup;
+  checkoutForm: UntypedFormGroup;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private cartService: CartService,
     private orderService: OrderService,
     private router: Router
