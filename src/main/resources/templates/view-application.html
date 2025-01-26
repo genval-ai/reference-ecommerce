@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Application Details</h1>
+        <div th:if="${application}">
+            <p><strong>ID:</strong> <span th:text="${application.id}"></span></p>
+            <p><strong>Name:</strong> <span th:text="${application.name}"></span></p>
+            <p><strong>Description:</strong> <span th:text="${application.description}"></span></p>
+            
+            <h2>Capabilities</h2>
+            <ul>
+                <li th:each="capability : ${application.capabilities}" th:text="${capability.name}"></li>
+            </ul>
+            
+            <a th:href="@{/applications/{id}/edit(id=${application.id})}" class="btn btn-primary">Edit</a>
+            <a href="/applications" class="btn btn-secondary">Back to List</a>
+            
+            <button id="discoverCapabilities" class="btn btn-info mt-3">Discover Relevant Capabilities</button>
+            
+            <div id="capabilitiesTable" style="display: none;">
+                <h3 class="mt-4">Existing Capabilities</h3>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Proposed Operation</th>
+                            <th>Reasoning</th>
+                            <th>Match Score</th>
+                        </tr>
+                    </thead>
+                    <tbody id="capabilitiesTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div th:unless="${application}">
+            <p>Application not found.</p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script th:inline="javascript">
+        $(document).ready(function() {
+            $('#discoverCapabilities').click(function() {
+                var applicationId = [[${application.id}]];
+                $.get('/api/applications/' + applicationId + '/discover-capabilities', function(data) {
+                    var tableBody = $('#capabilitiesTableBody');
+                    tableBody.empty();
+                    $.each(data, function(index, capability) {
+                        var row = $('<tr>');
+                        row.append($('<td>').text(capability.name));
+                        row.append($('<td>').text(capability.proposedOperationName));
+                        row.append($('<td>').text(capability.reasoning));
+                        row.append($('<td>').text(capability.matchScore.toFixed(2)));
+                        tableBody.append(row);
+                    });
+                    $('#capabilitiesTable').show();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
