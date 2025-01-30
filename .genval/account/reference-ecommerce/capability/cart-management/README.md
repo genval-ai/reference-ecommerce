@@ -9,6 +9,7 @@ REST API service for managing shopping carts and cart items, enabling creation, 
 
 ## Capability Operations
 
+<a name="create_cart"></a>
 ### Create Cart
 Creates a new empty shopping cart for a customer
 
@@ -51,6 +52,7 @@ Creates a new empty shopping cart for a customer
   ]
 }
 ```
+<a name="add_item"></a>
 ### Add Item to Cart
 Adds a product item to an existing shopping cart
 
@@ -112,6 +114,7 @@ Adds a product item to an existing shopping cart
   ]
 }
 ```
+<a name="get_cart"></a>
 ### Get Cart Details
 Retrieves the current state of a shopping cart
 
@@ -158,6 +161,61 @@ Retrieves the current state of a shopping cart
     "customerId",
     "items",
     "totalAmount"
+  ]
+}
+```
+<a name="update_cart_item"></a>
+### Update Cart Item
+Updates the quantity of an item in the cart or removes it if quantity is 0
+
+**Operation Metadata**
+| Property | Value |
+|----------|------|
+| Operation Code | `update_cart_item` |
+
+#### Input Schema
+```json Update Cart Item operation input schema
+{
+  "type": "object",
+  "properties": {
+    "cartId": {
+      "type": "string"
+    },
+    "productId": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "cartId",
+    "productId",
+    "quantity"
+  ]
+}
+```
+
+#### Output Schema
+```json Update Cart Item operation output schema
+{
+  "type": "object",
+  "properties": {
+    "cartId": {
+      "type": "string"
+    },
+    "updated": {
+      "type": "boolean"
+    },
+    "items": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "cartId",
+    "updated",
+    "items"
   ]
 }
 ```
