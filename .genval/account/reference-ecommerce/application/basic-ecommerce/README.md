@@ -30,6 +30,8 @@ Allow users to browse and search products in the catalog
 |------------|-----------|-----------------|
 | Search Service | [`search_query`](../../capability/search_service#search_query) | The search_query operation enables product browsing and searching functionality with filtering capabilities |
 | Product Management | [`get_product`](../../capability/product-management#get_product) | The get_product operation provides detailed product information needed for the product details view |
+| Inventory Service | [`get_inventory_level`](../../capability/inventory_service#get_inventory_level) | The product browsing feature should display inventory availability to shoppers. This operation would enable showing stock levels on product listing and detail pages. |
+| Pricing Service | [`get_item_price`](../../capability/pricing_service#get_item_price) | Can provide real-time pricing information when displaying products in the catalog and detail views. |
 
 
 ### Shopping Cart Management
@@ -52,6 +54,8 @@ Enable users to manage items in their shopping cart
 | Cart Management | [`update_cart_item`](../../capability/cart-management#update_cart_item) | Enables modifying quantities and removing items from cart |
 | Cart Management | [`add_item`](../../capability/cart-management#add_item) | Enables adding items to the shopping cart |
 | Cart Management | [`create_cart`](../../capability/cart-management#create_cart) | Required to initialize a shopping cart for users |
+| Promotions | [`get_applicable_promotions`](../../capability/promotions#get_applicable_promotions) | The shopping cart should display applicable promotions to help customers understand available discounts. |
+| Tax Calculation | [`calculate_tax`](../../capability/tax_calculation#calculate_tax) | The shopping cart should show estimated tax calculations to provide accurate total costs to shoppers. |
 
 
 ### Checkout Process
