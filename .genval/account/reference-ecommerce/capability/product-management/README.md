@@ -63,9 +63,6 @@ Retrieves detailed product information by ID
           },
           "sku": {
             "type": "string"
-          },
-          "attributes": {
-            "type": "object"
           }
         }
       }
