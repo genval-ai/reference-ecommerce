@@ -5,6 +5,17 @@ This stack is powered by Elastic Path for all capabilities.
 |----------|------|
 | Stack Code | `ep-stack` |
 
+## Applications
+
+| Application Image | Application Name / Code |
+|-------------------|-------------------------|
+
+
+## Aspects
+
+| Aspect Image | Aspect Name / Code |
+|-------------------|-------------------------|
+
 ## Capability Integrations
 
 | Capability Image | Capability Title / Code | Provider Image | Integration Title / Code |
