@@ -5,6 +5,17 @@ This stack is composed of a number of capability providers, who represent the ve
 |----------|------|
 | Stack Code | `custom-ecommerce` |
 
+## Applications
+
+| Application Image | Application Name / Code |
+|-------------------|-------------------------|
+
+
+## Aspects
+
+| Aspect Image | Aspect Name / Code |
+|-------------------|-------------------------|
+
 ## Capability Integrations
 
 | Capability Image | Capability Title / Code | Provider Image | Integration Title / Code |
