@@ -9,12 +9,16 @@ This stack is composed of a number of capability providers, who represent the ve
 
 | Application Image | Application Name / Code |
 |-------------------|-------------------------|
+| ![Live Shopping App Application Square Image](../../application/live-shopping-app/images/live-shopping-app_square.png) | Live Shopping App [`live-shopping-app`](../../application/live-shopping-app) |
+| ![Basic E-commerce Application Application Square Image](../../application/basic-ecommerce/images/basic-ecommerce_square.png) | Basic E-commerce Application [`basic-ecommerce`](../../application/basic-ecommerce) |
 
 
 ## Aspects
 
 | Aspect Image | Aspect Name / Code |
 |-------------------|-------------------------|
+| ![Rate Limiting Aspect Square Image](../../aspect/rate-limiting/images/rate-limiting_square.png) | Rate Limiting [`rate-limiting`](../../aspect/rate-limiting) |
+| ![Request Tracing Aspect Square Image](../../aspect/request-tracing/images/request-tracing_square.png) | Request Tracing [`request-tracing`](../../aspect/request-tracing) |
 
 ## Capability Integrations
 
