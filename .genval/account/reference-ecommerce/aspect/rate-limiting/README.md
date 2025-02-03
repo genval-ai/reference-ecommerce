@@ -1,5 +1,5 @@
 # Rate Limiting
-Controls the frequency of operations to prevent abuse and ensure fair resource utilization
+Controls the frequency of operations to prevent abuse and ensure fair resource utilization.
 
 **Aspect Metadata**
 | Property | Value |
@@ -11,7 +11,7 @@ Controls the frequency of operations to prevent abuse and ensure fair resource u
 
 
 ### Rate Limit API Requests
-Controls the frequency of operations to prevent abuse and ensure fair resource utilization
+Controls the frequency of operations to prevent abuse and ensure fair resource utilization.
 
 **Behavior Metadata**
 | Property | Value |
@@ -34,7 +34,7 @@ Use a distributed cache to track request counts per client identifier (e.g., API
 
 
 ### Throttle High-Frequency Operations
-Controls the frequency of operations to prevent abuse and ensure fair resource utilization
+Controls the frequency of operations to prevent abuse and ensure fair resource utilization.
 
 **Behavior Metadata**
 | Property | Value |
@@ -56,7 +56,7 @@ Identify high-risk operations and apply stricter rate limits. Monitor usage patt
 
 
 ### Implement Exponential Backoff
-Controls the frequency of operations to prevent abuse and ensure fair resource utilization
+Controls the frequency of operations to prevent abuse and ensure fair resource utilization.
 
 **Behavior Metadata**
 | Property | Value |
